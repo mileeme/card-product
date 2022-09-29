@@ -1,0 +1,25 @@
+.tabs {
+  position: relative;
+  display: flex;
+  height: 40px;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  span:hover {
+    font-weight: 600;
+  }
+}
+
+.glider {
+  position: absolute;
+  height: 4px;
+  width: 69px;
+  bottom: 0;
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.39, 1.11, 0.7, 1.01);
+}

@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import HeaderTabs from "./Components/Header/HeaderTabs";
+import Header from "./Components/Header/Header";
+import LohpIndex from "./Components/Lohp/LohpIndex";
+
+const Testt = () => <div>hello 123</div>
+const Testtt = () => <div>hello doom</div>
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <HeaderTabs />
+      <Header />
+      <main role="main">
+        <Routes>
+          <Route exact path="/" element={<LohpIndex />} />
+          <Route exact path="/search" element={<Testtt />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   );
 }
 
