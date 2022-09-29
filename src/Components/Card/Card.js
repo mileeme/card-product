@@ -5,6 +5,7 @@ import Typography from "../Typography";
 import { theme } from "../../Styles/theme";
 import Icon from "../Icon/Icon";
 import LinkWithIcon from "../Link/LinkWithIcon";
+import Button from "../Button/Button";
 
 const { palette, mq } = theme;
 
@@ -27,15 +28,15 @@ export default function Card(props) {
     display: flex;
     flex-direction: column;
     position: relative;
-    border-radius: 8px;
+    border-radius: 16px;
     overflow: hidden;
     background-color: ${palette.white};
     cursor: pointer;
-    // box-shadow: 1px 1px 12px 0 rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 12px 0 rgb(0 0 0 / 16%);
+    border: 2px solid ${palette.interactive.neutral.light};
+    padding: 8px;
+    // box-shadow: 1px 1px 12px 0 rgb(0 0 0 / 16%);
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     &:hover {
-      // box-shadow: 0px 0px 40px -10px rgba(0, 0, 0, 0.3),0 0 24px -16px rgba(0, 0, 0, 0.24);
       box-shadow: 0px 0px 40px -8px rgba(0, 0, 0, 0.24),0 0 25px -16px rgba(0, 0, 0, 0.2);
       transform: scale3d(1.03, 1.03, 1.08) translate3d(0.1rem, -0.25rem, 20rem);
     }
@@ -45,42 +46,47 @@ export default function Card(props) {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 216px;
+    height: 171px;
+    border-radius: 8px;
     background-image: url(${data.course_img});
     background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
+    background-position: center center;
+    background-size: 104%;
   `;
 
   const CardContent = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1 0 auto;
-    padding: 16px;
-    row-gap: 8px;
+    padding: 16px 8px;
+    row-gap: 16px;
   `;
 
-  const ContentTop = styled.div`
+  const CardHeading = styled.div`
     display: grid;
     gap: 8px;
   `;
 
-  const ContentBottom = styled.div`
+  const CardBody = styled.div`
+  `
+
+  const CardFooter = styled.div`
     // display: flex;
     // flex-direction: column;
-    // gap: 8px;
+    gap: 8px;
     margin-top: auto;
   `;
   const OrgLabel = styled.div`
     display: flex;
     align-items: center;
-    color: ${palette.neutral.lohp};
+    gap: 4;
+    color: ${palette.neutral.default};
   `;
   const OrgAvatar = styled.div`
     border-radius: 4px;
-    border: 1px solid ${palette.neutral.light};
+    border: 1px solid ${palette.neutral.lightCopy};
     margin-right: 8px;
-    padding: 1px;
+    padding: 2px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,12 +119,9 @@ export default function Card(props) {
               body1
             />
           </div>
-          <LinkWithIcon
-            color="primary"
-            label={`View more ${data.product}s`}
-            icon='arrowNext'
-            fontType='h3Bold'
-          />
+          <div css={{display: "inline-block"}}>
+          <Button variant="ghostPrimary" size="md" label={`View more ${data.product}s`} icon="arrowNext" margin="negativeLeft" />
+          </div>
         </IntroStyle>
       )}
 
@@ -156,7 +159,7 @@ export default function Card(props) {
           {/* card content */}
           <CardContent>
             {/* Top content section */}
-            <ContentTop css={{ marginBottom: 16 }}>
+            <CardHeading>
               {/* Organization information */}
               <OrgLabel>
                 {data.org_img.length > 0 &&
@@ -171,7 +174,6 @@ export default function Card(props) {
                   ))}
 
                 <Typography
-                  css={{ color: palette.neutral.default }}
                   label={data.org}
                   body2
                 />
@@ -182,7 +184,7 @@ export default function Card(props) {
                 css={{
                   overflow: "hidden",
                   display: "-webkit-box",
-                  WebkitLineClamp: 2,
+                  WebkitLineClamp: 3,
                   WebkitBoxOrient: "vertical",
                   textOverflow: "ellipsis",
                   margin: 0,
@@ -195,7 +197,9 @@ export default function Card(props) {
                   <Typography label={data.title} h3 />
                 </a>
               </h3>
+            </CardHeading>
 
+            <CardBody>
               {/* Skillsets */}
               {data.skills && (
                 <div
@@ -214,10 +218,10 @@ export default function Card(props) {
                   />
                 </div>
               )}
-            </ContentTop>
+            </CardBody>
 
             {/* Bottom content section */}
-            <ContentBottom>
+            <CardFooter>
               {/* Product type */}
               {data.product === "plus" && (
                 <div
@@ -244,9 +248,9 @@ export default function Card(props) {
                     marginBottom: 4,
                   }}
                 >
-                  <Icon icon='degree' size='md' button='ghostPrimary' />
+                  <Icon type='degree' size='md' button='secondary' />
                   <Typography
-                    css={{ color: palette.interactive.neutral.default }}
+                    css={{ color: palette.interactive.primary.default }}
                     label='Earn a degree'
                     body2
                   />
@@ -263,10 +267,11 @@ export default function Card(props) {
                 >
                   <Typography
                     css={{ lineHeight: 0 }}
-                    label={<Icon icon='credit' button='ghostNeutral' />}
+                    label={<Icon type='credit' size="sm" button='secondary' />}
                     body2
                   />
                   <Typography
+                    css={{ color: palette.interactive.primary.default }}
                     label='Try free for 7 days with Coursera Plus'
                     body2
                   />
@@ -288,7 +293,7 @@ export default function Card(props) {
                     label={data.rating.split(" ")[0]}
                     h4Bold
                   />
-                  <Icon icon='star' size='sm' button='ghostPrimary' />
+                  <Icon type='star' size='sm' button='ghostPrimary' />
                   <Typography
                     css={{ lineHeight: 0, color: palette.neutral.lohp }}
                     label={data.rating.match(/^(\S+)\s(.*)/).slice(2)}
@@ -302,13 +307,13 @@ export default function Card(props) {
                 <Typography
                   css={{
                     lineHeight: 0,
-                    color: palette.neutral.lohp,
+                    color: palette.neutral.default,
                   }}
                   label={data.categories.join(" · ")}
                   body2
                 />
               )}
-            </ContentBottom>
+            </CardFooter>
           </CardContent>
         </CardStyle>
       )}

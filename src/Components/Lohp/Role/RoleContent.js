@@ -1,16 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
 import { keyframes } from "@emotion/react";
-import Typography from "../Typography";
-import { theme } from "../../Styles/theme";
-import Card from "../Card/Card";
-import areaGraph from "../../Assets/areaGraph.png";
-import Icon from "../Icon/Icon";
-import Button from "../Button/Button";
-import rachelL from "../../Assets/rachelL.png";
-import uofLondon from "../../Assets/uofLondonSchool.png";
-import { google, london } from "../Icon/PartnerLogo";
-import googleCardImg from "../../Assets/googleDataCardImage.png";
+import { theme } from "../../../Styles/theme";
+import Card from "../../Card/Card";
+import Typography from "../../Typography";
+import { google, london } from "../../Icon/PartnerLogo";
+import rachelL from "../../../Assets/rachelL.png";
+import uofLondon from "../../../Assets/uofLondonSchool.png";
+import googleCardImg from "../../../Assets/googleDataCardImage.png";
 
 const chevron = {
   borderWidth: "3px 3px 0 0",

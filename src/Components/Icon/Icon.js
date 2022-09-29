@@ -95,6 +95,7 @@ export default function IconSearch(props) {
     >
       <title id='cds-136-title'>Medium</title>
       <path
+        fill={handleColorChange(button)}
         fillRule='evenodd'
         clipRule='evenodd'
         d='M16.793 9.5L9.646 2.354l.708-.708L18.707 10l-8.353 8.354-.708-.707 7.147-7.147H2v-1h14.793z'
@@ -206,7 +207,7 @@ export default function IconSearch(props) {
 
   const degree = (
     <svg
-      fill='none'
+      fill={handleColorChange(button)}
       focusable='false'
       height={handleSizeChange(size)}
       width={handleSizeChange(size)}
@@ -220,32 +221,32 @@ export default function IconSearch(props) {
         fillRule='evenodd'
         clipRule='evenodd'
         d='M7.9 2.437L14.765 6 7.9 9.563 1.035 6 7.9 2.437zM3.205 6L7.9 8.437 12.595 6 7.9 3.563 3.205 6z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
         d='M4.5 9.67V7.5h1v2.17c0 .341.198.704.627 1.002.427.297 1.047.498 1.763.498s1.336-.201 1.763-.498c.43-.298.627-.66.627-1.002V7.5h1v2.17c0 .759-.442 1.396-1.056 1.823-.615.428-1.44.677-2.334.677-.894 0-1.719-.249-2.334-.677C4.942 11.066 4.5 10.429 4.5 9.67z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
         d='M7.456 5.77a.5.5 0 01.675-.214l5.14 2.67a.5.5 0 01.269.444v1.66a.5.5 0 11-1 0V8.974l-4.87-2.53a.5.5 0 01-.214-.674z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
         d='M12.37 9.723a1.5 1.5 0 012.13 1.667v3.11h-2.93v-3.11a1.5 1.5 0 01.8-1.667zm.665.845a.5.5 0 00-.482.63l.017.065V13.5h.93v-2.237l.018-.064a.5.5 0 00-.483-.631z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
     </svg>
   );
 
   const credit = (
     <svg
-      fill='none'
+      fill={handleColorChange(button)}
       focusable='false'
       height={handleSizeChange(size)}
       width={handleSizeChange(size)}
@@ -259,17 +260,17 @@ export default function IconSearch(props) {
         fillRule='evenodd'
         clipRule='evenodd'
         d='M.53 2.5h14.94v11.04H.53V2.5zm1 1v9.04h12.94V3.5H1.53z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
       <path
         fillRule='evenodd'
         clipRule='evenodd'
         d='M10.49 5.72a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5zM8.24 6.97a2.25 2.25 0 114.5 0 2.25 2.25 0 01-4.5 0z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
       <path
         d='M9.27 8.27v3.05l1.22-.63 1.22.63V8.27H9.27z'
-        fill='currentColor'
+        fill={handleColorChange(button)}
       ></path>
     </svg>
   );

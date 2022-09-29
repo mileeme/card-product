@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
 import { keyframes } from "@emotion/react";
-import Container from "../Container/Container";
-import Section from "../Container/Section";
-import { theme } from "../../Styles/theme";
+import Container from "../../Container/Container";
+import Section from "../../Container/Section";
+import { theme } from "../../../Styles/theme";
 import RoleTabs from "./RoleTabs";
-import LinkWithIcon from "../Link/LinkWithIcon";
-import Typography from "../Typography";
+import LinkWithIcon from "../../Link/LinkWithIcon";
+import Typography from "../../Typography";
 
 
 const animateUp = keyframes`
@@ -25,7 +25,7 @@ const delay1 = "0.5s";
 const speedType1 = "cubic-bezier(0, 1, 0.9, 1)";
 const direction = "forwards";
 
-export default function RoleSection() {
+export default function Role() {
   const { mq, palette } = theme;
 
   return (
@@ -43,7 +43,7 @@ export default function RoleSection() {
           <LinkWithIcon
             label={`View more roles`}
             icon='arrowNext'
-            fontType='h3Bold'
+            size='sm'
           />        
         </div>
 

@@ -330,30 +330,6 @@ const fontType = {
     fontWeight: fontWeight.normal,
     letterSpacing: 0,
   },
-  // h3Semibold: {
-  //   fontSize: "1rem",
-  //   lineHeight: "1.5rem",
-  //   fontWeight: fontWeight.semibold,
-  //   letterSpacing: letterSpacingLtr[50],
-  // },
-  // body1Semibold: {
-  //   fontSize: "1rem",
-  //   lineHeight: "1.5rem",
-  //   fontWeight: fontWeight.semibold,
-  //   letterSpacing: 0,
-  // },
-  // body1Bold: {
-  //   fontSize: "1rem",
-  //   lineHeight: "1.5rem",
-  //   fontWeight: fontWeight.bold,
-  //   letterSpacing: 0,
-  // },
-  // body2Bold: {
-  //   fontSize: "0.875rem",
-  //   lineHeight: "1.25rem",
-  //   fontWeight: fontWeight.bold,
-  //   letterSpacing: 0,
-  // },
 };
 
 export const theme = { palette, button, spacing, borderRadius, fontType, breakpoints, mq };

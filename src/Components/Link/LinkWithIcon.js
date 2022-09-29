@@ -7,7 +7,7 @@ import Typography from "../Typography";
 import Icon from "../Icon/Icon";
 
 export default function LinkWithIcon(props) {
-  const { icon, label, showLabel, fontType, color } = props;
+  const { icon, label, showLabel, size } = props;
 
   const IconStyle = styled.span`
     display: flex;
@@ -21,7 +21,7 @@ const LinkStyle = styled.a`
   display: flex; 
   gap: 8px;
   align-items: center;
-  color: ${color === "primary" ? theme.palette.interactive.primary.default : theme.palette.black};
+  color: ${theme.palette.black};
   &:hover {
     color: ${theme.palette.interactive.hover};
   }
@@ -35,13 +35,13 @@ const LinkStyle = styled.a`
 
   return (
     <LinkStyle {...props} style={{ ...props }}>
-      {fontType === "h3Bold" && 
-        <Typography label={label} css={{whiteSpace: "nowrap", display: showLabel === "all" && "inline-block" || showLabel === "sm" && "none", [mq[1]]: {display: showLabel === "sm" && "inline-block",}}} h3Bold/>
+      {size === "sm" && 
+        <Typography label={label} css={{whiteSpace: "nowrap"}} body2/>
       }  
-      {fontType === "" && 
-        <Typography label={label} css={{whiteSpace: "nowrap", display: showLabel === "all" && "inline-block" || showLabel === "sm" && "none", [mq[1]]: {display: showLabel === "sm" && "inline-block" || showLabel === "md" && "none",}}} body1/>
+      {size === "md" && 
+        <Typography label={label} css={{whiteSpace: "nowrap"}} body2/>
       }    
-      <IconStyle><Icon icon={icon} button={color === "primary" ? "ghostPrimary" : "ghostNeutral"} size="md" /></IconStyle>
+      <IconStyle><Icon type={icon} button="ghostNeutral" size={size === "sm" ? "sm" : "md"} /></IconStyle>
     </LinkStyle>
   );
 }

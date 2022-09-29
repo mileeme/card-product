@@ -16,17 +16,17 @@ export default function Button(props) {
     height: ${size === "md" ? "40px" : "36px"};
     justify-content: center;
     padding: ${(label && size === "md" && `0 ${spacing[200]}`) ||
-    (label && size === "sm" && `0 ${spacing[200]}`)};
+    (label && size === "sm" && `0 ${spacing[100]}`)};
     // width: auto;
     margin-left: ${(margin === "negativeLeft" &&
       size == "md" &&
-      `-${spacing[400]}`) ||
-    (margin === "negativeLeft" && size === "sm" && `-${spacing[200]}`) ||
+      `-${spacing[200]}`) ||
+    (margin === "negativeLeft" && size === "sm" && `-${spacing[100]}`) ||
     "0"};
     margin-right: ${(margin === "negativeRight" &&
       size == "md" &&
-      `-${spacing[400]}`) ||
-    (margin === "negativeRight" && size === "sm" && `-${spacing[200]}`) ||
+      `-${spacing[200]}`) ||
+    (margin === "negativeRight" && size === "sm" && `-${spacing[100]}`) ||
     "0"};
     border-radius: ${borderRadius[50]};
     border: none;
@@ -184,8 +184,8 @@ export default function Button(props) {
 
   return (
     <ButtonStyle {...props} size={size} variant={variant} style={{...props}}>
-      {label && size === "md" && <Typography label={label} h3 />}
-      {label && size === "sm" && <Typography label={label} h4 />}
+      {label && size === "md" && <Typography label={label} h3Bold />}
+      {label && size === "sm" && <Typography label={label} h4Bold />}
       {icon && <Icon size={size} type={icon} button={variant} />}
     </ButtonStyle>
   );

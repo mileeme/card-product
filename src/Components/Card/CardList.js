@@ -25,7 +25,7 @@ export default function CardList(props) {
     <div css={{display: "grid", gap: 16}}>
       <List>
         {filtered.length > 0 && filtered.map((el, index) => (    
-            <GoalCard key={index} data={el} />
+            <Card key={index} data={el} />
           ))
         }
       </List>

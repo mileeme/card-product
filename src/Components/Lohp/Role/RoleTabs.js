@@ -4,8 +4,8 @@
 import { useState } from "react";
 import styled from "@emotion/styled";
 import { roleData } from "./RoleData";
-import { theme } from "../../Styles/theme";
-import Typography from "../Typography";
+import { theme } from "../../../Styles/theme";
+import Typography from "../../Typography";
 import RoleContent from "./RoleContent";
 
 export default function RoleTabs() {
