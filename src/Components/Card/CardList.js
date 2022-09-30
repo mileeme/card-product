@@ -10,8 +10,8 @@ export default function CardListGoals(props) {
   const List = styled.ul({
     position: 'relative',
     listStyle: "none",
-    columnGap: 12,
-    rowGap: 12,
+    columnGap: 16,
+    rowGap: 16,
     display: "grid",
     margin: 0,
     padding: 0,
