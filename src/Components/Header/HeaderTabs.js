@@ -12,9 +12,9 @@ export default function HeaderTabs8px() {
   const [xPos, setXPos] = useState(0);
   const [gliderWidth, setGliderWidth] = useState(45);
   const lWidth = 38 + 16;
-  const bWidth = 59 + 16;
-  const cWidth = 54 + 16;
-  const gWidth = 84 + 16;
+  const sWidth = 46 + 16;
+  // const cWidth = 54 + 16;
+  // const gWidth = 84 + 16;
 
   // theme
   const {palette, mq} = theme
@@ -39,15 +39,15 @@ export default function HeaderTabs8px() {
 
     // If window resize, re-render xPos?
     useEffect(() => {
-      if (selected === "Business") {
+      if (selected === "Search") {
         setXPos(lWidth + tabGap);
-        setGliderWidth(bWidth);
-      } else if (selected === "Campus") {
-        setXPos(lWidth + bWidth + tabGap * 2);
-        setGliderWidth(cWidth);
-      } else if (selected === "Government") {
-        setXPos(lWidth + bWidth + cWidth + tabGap * 3);
-        setGliderWidth(gWidth);
+        setGliderWidth(sWidth);
+      // } else if (selected === "Campus") {
+      //   setXPos(lWidth + sWidth + tabGap * 2);
+      //   setGliderWidth(cWidth);
+      // } else if (selected === "Government") {
+      //   setXPos(lWidth + sWidth + cWidth + tabGap * 3);
+      //   setGliderWidth(gWidth);
       } else {
         setXPos(0);
         setGliderWidth(lWidth);
@@ -59,15 +59,15 @@ export default function HeaderTabs8px() {
 
   // Set glider width and x position when selected
   useEffect(() => {
-    if (selected === "Business") {
+    if (selected === "Search") {
       setXPos(lWidth + tabGap);
-      setGliderWidth(bWidth);
-    } else if (selected === "Campus") {
-      setXPos(lWidth + bWidth + tabGap * 2);
-      setGliderWidth(cWidth);
-    } else if (selected === "Government") {
-      setXPos(lWidth + bWidth + cWidth + tabGap * 3);
-      setGliderWidth(gWidth);
+      setGliderWidth(sWidth);
+    // } else if (selected === "Campus") {
+    //   setXPos(lWidth + sWidth + tabGap * 2);
+    //   setGliderWidth(cWidth);
+    // } else if (selected === "Government") {
+    //   setXPos(lWidth + sWidth + cWidth + tabGap * 3);
+    //   setGliderWidth(gWidth);
     } else {
       setXPos(0);
       setGliderWidth(lWidth);
@@ -105,15 +105,15 @@ export default function HeaderTabs8px() {
           </div>
           <div
             className={styles.tab}
-            css={{ width: bWidth }}
+            css={{ width: sWidth }}
             onClick={handleTabClick}
           >
-            {selected === "Business" ? 
-              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Business' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Business' body1 /></Link>    
+            {selected === "Search" ? 
+              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Search' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Search' body1 /></Link>    
             }
           </div>
-          <div
+          {/* <div
             className={styles.tab}
             css={{ width: cWidth }}
             onClick={handleTabClick}
@@ -122,8 +122,8 @@ export default function HeaderTabs8px() {
               <Typography label='Campus' h3 /> :             
               <Typography label='Campus' body1 />    
             }
-          </div>
-          <div
+          </div> */}
+          {/* <div
             className={styles.tab}
             css={{ width: gWidth }}
             onClick={handleTabClick}
@@ -131,7 +131,8 @@ export default function HeaderTabs8px() {
             {selected === "Government" ? 
               <Typography label='Government' h3 /> :             
               <Typography label='Government' body1 />    
-            }          </div>
+            }         
+          </div> */}
           {/* Glider */}
           <div
             className={styles.glider}

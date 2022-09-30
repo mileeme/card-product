@@ -102,7 +102,7 @@ export default function Card(props) {
     padding: "0 4px",
     display: "flex",
     alignItems: "center",
-    borderRadius: 2,
+    borderRadius: 4,
     color: palette.white,
     backgroundColor: palette.interactive.primary.default,
   };
@@ -129,19 +129,13 @@ export default function Card(props) {
         <CardStyle>
           {/* card image */}
           <ImageContainer>
-            {/* <img
-              css={{ height: "100%" }}
-              src={data.course_img}
-              alt={data.title}
-              aria-hidden='true'
-            /> */}
             {data.status.length > 0 && (
               <div
                 css={{
                   position: "absolute",
-                  backgroundColor: palette.white,
-                  top: 12,
-                  right: 12,
+                  backgroundColor: palette.neutral.light,
+                  top: 16,
+                  left: 16,
                   height: 22,
                   display: "flex",
                   alignItems: "center",
@@ -151,7 +145,7 @@ export default function Card(props) {
                   border: `1px solid ${palette.neutral.lightCopy}`,
                 }}
               >
-                <Typography label={data.status[0]} h4Bold />
+                <Typography label={data.status[0]} h4 />
               </div>
             )}
           </ImageContainer>
@@ -164,19 +158,20 @@ export default function Card(props) {
               <OrgLabel>
                 {data.org_img.length > 0 &&
                   data.org_img.map((el, index) => (
-                    <OrgAvatar key={index} aria-hidden='true'>
-                      <img
-                        css={{ width: "100%" }}
-                        src={el}
-                        aria-hidden='true'
-                      />
-                    </OrgAvatar>
-                  ))}
+                  <OrgAvatar key={index} aria-hidden='true'>
+                    <img
+                      css={{ width: "100%" }}
+                      src={el}
+                      aria-hidden='true'
+                    />
+                  </OrgAvatar>
+                ))}
 
-                <Typography
-                  label={data.org}
-                  body2
-                />
+                {(data.org_img.length > 0 && data.org_img.length < 2) ? 
+                  <Typography label={data.org} body2 />
+                  :
+                  <Typography label="Multiple institutions" body2 />
+                }
               </OrgLabel>
 
               {/* Card title */}
@@ -223,7 +218,7 @@ export default function Card(props) {
             {/* Bottom content section */}
             <CardFooter>
               {/* Product type */}
-              {data.product === "plus" && (
+              {data.category.length > 0 && data.category === "plus" && (
                 <div
                   css={{
                     display: "flex",
@@ -232,9 +227,10 @@ export default function Card(props) {
                     marginBottom: 4,
                   }}
                 >
-                  <Typography label='PLUS' style={tagPlus} body2 />
+                  <Typography label='PLUS' style={tagPlus} h4Bold />
                   <Typography
-                    label='Try free for 7 days with Coursera Plus'
+                    css={{color: palette.neutral.default}}
+                    label='Included with Coursera Plus'
                     body2
                   />
                 </div>
@@ -256,7 +252,7 @@ export default function Card(props) {
                   />
                 </div>
               )}
-              {data.product === "credit" && (
+              {data.credit.length > 0 && (
                 <div
                   css={{
                     display: "flex",
@@ -272,7 +268,7 @@ export default function Card(props) {
                   />
                   <Typography
                     css={{ color: palette.interactive.primary.default }}
-                    label='Try free for 7 days with Coursera Plus'
+                    label={data.credit}
                     body2
                   />
                 </div>
@@ -303,13 +299,13 @@ export default function Card(props) {
               )}
 
               {/* Category tags */}
-              {data.categories && (
+              {data.meta_data && (
                 <Typography
                   css={{
                     lineHeight: 0,
                     color: palette.neutral.default,
                   }}
-                  label={data.categories.join(" · ")}
+                  label={data.meta_data.join(" · ")}
                   body2
                 />
               )}

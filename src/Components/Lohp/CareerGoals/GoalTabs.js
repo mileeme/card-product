@@ -2,11 +2,10 @@
 
 import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
-import { cards, tabs, skill, course, specialization, degree } from "./GoalData";
+import { cards, tabs, skill, course, specialization, degree } from "./dataGoal";
 import { theme } from "../../../Styles/theme";
 import Typography from "../../Typography";
-import CardList from "../../Card/CardList";
-import LinkWithIcon from "../../Link/LinkWithIcon";
+import CardListGoals from "../../Card/CardListGoals";
 
 export default function GoalTabs(props) {
   const [activeTab, setActiveTab] = useState("All");
@@ -123,20 +122,16 @@ export default function GoalTabs(props) {
       {/* Tab content */}
       {activeTab === "All" ? 
         <div css={{ display: "grid", gap: 32 }}>
-          <CardList product='All' filtered={degree} type={product} />
-          <CardList
+          <CardListGoals product='All' filtered={degree} type={product} />
+          <CardListGoals
             product='All'
             filtered={specialization}
             type={product}
           />
-          <CardList product='All' filtered={course} type={product} />
+          <CardListGoals product='All' filtered={course} type={product} />
         </div> :
         <div css={{width: "100%", height: 600, backgroundColor: palette.background.grayLight, display: "flex", alignItems: "center", justifyContent: "center", gap: 6}}><Typography css={{color: palette.interactive.neutral.default}} label={activeTab} body1 /><Typography css={{color: palette.interactive.neutral.default}} label="section in progress" body1 /></div>
       }
-
-      {/* {filteredCards && (
-        <CardList product='course' filtered={filteredCards} />
-      )} */}
     </TabWrapper>
   );
 }
