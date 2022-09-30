@@ -26,10 +26,10 @@ const speedType1 = "cubic-bezier(0, 1, 0.9, 1)";
 const direction = "forwards";
 
 export default function Role() {
-  const { mq, palette } = theme;
+  const { mq } = theme;
 
   return (
-    <Section bgColor={palette.background.grayLight} >
+    <Section>
       <Container
         css={{
           opacity: 0,

@@ -164,7 +164,8 @@ export default function RoleContent() {
         css={{             
           padding: 16,
           borderRadius: 8,
-          boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
+          border: `2px solid ${palette.neutral.lightCopy}`,
+          // boxShadow: "0px 2px 10px rgba(0, 0, 0, 0.1)",
           backgroundColor: palette.white,
           [mq[2]]: {
             padding: "40px 80px",
