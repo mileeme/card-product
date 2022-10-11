@@ -20,13 +20,13 @@ export default function Button(props) {
     // width: auto;
     margin-left: ${(margin === "negativeLeft" &&
       size == "md" &&
-      `-${spacing[200]}`) ||
-    (margin === "negativeLeft" && size === "sm" && `-${spacing[100]}`) ||
+      `-${spacing[400]}`) ||
+    (margin === "negativeLeft" && size === "sm" && `-${spacing[200]}`) ||
     "0"};
     margin-right: ${(margin === "negativeRight" &&
       size == "md" &&
-      `-${spacing[200]}`) ||
-    (margin === "negativeRight" && size === "sm" && `-${spacing[100]}`) ||
+      `-${spacing[400]}`) ||
+    (margin === "negativeRight" && size === "sm" && `-${spacing[200]}`) ||
     "0"};
     border-radius: ${borderRadius[50]};
     border: none;

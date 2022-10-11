@@ -265,7 +265,7 @@ export default function Section1() {
               
               {/* Footer */}
               <div css={{borderTop: `1px solid ${palette.neutral.lightCopy}`, margin: "16px 0 0 0", paddingTop: 16 }}>
-                <Button label="View 8 course curriculum" variant="ghostPrimary" size="sm" />
+                <Button label="View 8 course curriculum" variant="ghostPrimary" size="sm" margin="negativeLeft" />
               </div>
             </div>
 
