@@ -14,11 +14,12 @@ import { theme } from "../../../Styles/theme";
 import Detail from "./Detail";
 import Link from "../../Link/Link";
 import RatingStar from "../../Rating/RatingStar";
-import { googleFull } from "../../Icon/PartnerLogo";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import Section2 from "../Section2/Section2";
 import Section3 from "../Section3/Section3";
 import Tabs from "../../Tab/Tabs";
+import Accordion from "../../Accordion/Accordion";
+import { googleFull } from "../../Icon/PartnerLogo";
 
 const skills = [
   "Data Visualization (DataViz)",
@@ -48,8 +49,20 @@ export default function Section1() {
   useEffect(() => {
     const titleBottom = document.getElementById("title").getBoundingClientRect().bottom;
     const enrollButtonBottom = document.getElementById("button").getBoundingClientRect().bottom;
+    console.log(enrollButtonBottom)
     setTitleBottomPos(titleBottom);
     setEnrollButtonBottomPos(enrollButtonBottom);
+
+    setStickyHeader(titleBottom < 60);
+    setStickyButton(enrollButtonBottom < 100);
+
+    if (titleBottom > 60) {
+      setStickyHeader(false);
+    }
+
+    if (enrollButtonBottom > 100) {
+      setStickyButton(false);
+    }
   }, [scrollPos]);
 
   // Get scroll position
@@ -57,18 +70,6 @@ export default function Section1() {
     // Y scroll position
     const currentScrollPos = Math.round(window.scrollY);
     setScrollPos(currentScrollPos);
-
-
-    setStickyHeader(titleBottomPos < 0);
-    setStickyButton(enrollButtonBottomPos < 0);
-
-    if (titleBottomPos > 60) {
-      setStickyHeader(false);
-    }
-
-    if (enrollButtonBottomPos > 60) {
-      setStickyButton(false);
-    }
   };
 
   // Event listener for scroll
@@ -81,7 +82,7 @@ export default function Section1() {
   return (<Section css={{padding: 0, position: "relative"}}>
 
     {/* Sticky header */}
-    <div css={{position: "sticky", display: stickyHeader ? "grid" : "none", top: 0, left: 0, right: 0, backgroundColor: palette.white, zIndex: 100}}>
+    <div css={{position: "sticky", display: stickyHeader ? "block" : "none", top: 0, backgroundColor: palette.white, zIndex: 100}}>
       <Container css={{display: "flex", alignItems: "center", height: 48, justifyContent: "space-between"}} lg>
         <div css={{display: "flex", alignItems: "center", gap: 16}}>
           <img src={googleFull} width="78px" />
