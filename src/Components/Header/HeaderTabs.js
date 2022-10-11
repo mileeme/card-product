@@ -13,7 +13,7 @@ export default function HeaderTabs8px() {
   const [gliderWidth, setGliderWidth] = useState(45);
   const lWidth = 38 + 16;
   const sWidth = 46 + 16;
-  // const cWidth = 54 + 16;
+  const xWidth = 27 + 16;
   // const gWidth = 84 + 16;
 
   // theme
@@ -62,9 +62,9 @@ export default function HeaderTabs8px() {
     if (selected === "Search") {
       setXPos(lWidth + tabGap);
       setGliderWidth(sWidth);
-    // } else if (selected === "Campus") {
-    //   setXPos(lWidth + sWidth + tabGap * 2);
-    //   setGliderWidth(cWidth);
+    } else if (selected === "XDP") {
+      setXPos(lWidth + sWidth + tabGap * 2);
+      setGliderWidth(xWidth);
     // } else if (selected === "Government") {
     //   setXPos(lWidth + sWidth + cWidth + tabGap * 3);
     //   setGliderWidth(gWidth);
@@ -113,16 +113,16 @@ export default function HeaderTabs8px() {
               <Link css={{textDecoration: "none"}} to="/search"><Typography label='Search' body1 /></Link>    
             }
           </div>
-          {/* <div
+          <div
             className={styles.tab}
-            css={{ width: cWidth }}
+            css={{ width: xWidth }}
             onClick={handleTabClick}
           >
-            {selected === "Campus" ? 
-              <Typography label='Campus' h3 /> :             
-              <Typography label='Campus' body1 />    
+            {selected === "XDP" ? 
+              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='XDP' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='XDP' body1 /></Link>
             }
-          </div> */}
+          </div>
           {/* <div
             className={styles.tab}
             css={{ width: gWidth }}

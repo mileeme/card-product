@@ -79,6 +79,19 @@ export default function Typography(props) {
   });
 
   // H1
+  // const Heading1 = styled.span({
+  //   fontSize: theme.fontType.h1.fontSize,
+  //   lineHeight: theme.fontType.h1.lineHeight,
+  //   fontWeight: theme.fontType.h1.fontWeight,
+  //   letterSpacing: theme.fontType.h1.letterSpacing,
+  //   color: "inherit",
+  //   transition: "font-size 0.3s ease",
+  //   [mq[1]]: {
+  //     fontSize: theme.fontType.h1.mq1.fontSize,
+  //     lineHeight: theme.fontType.h1.mq1.lineHeight,
+  //   },
+  // });
+
   const Heading1 = styled.span({
     fontSize: theme.fontType.h1.fontSize,
     lineHeight: theme.fontType.h1.lineHeight,
@@ -92,33 +105,20 @@ export default function Typography(props) {
     },
   });
 
-  const Heading1Semibold = styled.span({
-    fontSize: theme.fontType.h1Semibold.fontSize,
-    lineHeight: theme.fontType.h1Semibold.lineHeight,
-    fontWeight: theme.fontType.h1Semibold.fontWeight,
-    letterSpacing: theme.fontType.h1Semibold.letterSpacing,
-    color: "inherit",
-    transition: "font-size 0.3s ease",
-    [mq[1]]: {
-      fontSize: theme.fontType.h1Semibold.mq1.fontSize,
-      lineHeight: theme.fontType.h1Semibold.mq1.lineHeight,
-    },
-  });
-
   // H2
+  // const Heading2 = styled.span({
+  //   fontSize: theme.fontType.h2.fontSize,
+  //   lineHeight: theme.fontType.h2.lineHeight,
+  //   fontWeight: theme.fontType.h2.fontWeight,
+  //   letterSpacing: theme.fontType.h2.letterSpacing,
+  //   color: "inherit",
+  // });
+
   const Heading2 = styled.span({
     fontSize: theme.fontType.h2.fontSize,
     lineHeight: theme.fontType.h2.lineHeight,
     fontWeight: theme.fontType.h2.fontWeight,
     letterSpacing: theme.fontType.h2.letterSpacing,
-    color: "inherit",
-  });
-
-  const Heading2Semibold = styled.span({
-    fontSize: theme.fontType.h2Semibold.fontSize,
-    lineHeight: theme.fontType.h2Semibold.lineHeight,
-    fontWeight: theme.fontType.h2Semibold.fontWeight,
-    letterSpacing: theme.fontType.h2Semibold.letterSpacing,
     color: "inherit",
   });
 
@@ -225,13 +225,13 @@ export default function Typography(props) {
         <Display2Semibold {...props}>{props.label}</Display2Semibold>
       )}
       {props.h1 && <Heading1 {...props}>{props.label}</Heading1>}
-      {props.h1Semibold && (
-        <Heading1Semibold {...props}>{props.label}</Heading1Semibold>
-      )}
+      {/* {props.h1 && (
+        <Heading1 {...props}>{props.label}</Heading1>
+      )} */}
       {props.h2 && <Heading2 {...props}>{props.label}</Heading2>}
-      {props.h2Semibold && (
-        <Heading2Semibold {...props}>{props.label}</Heading2Semibold>
-      )}      
+      {/* {props.h2 && (
+        <Heading2 {...props}>{props.label}</Heading2>
+      )}       */}
       {props.h2Bold && (
         <Heading2Bold {...props}>{props.label}</Heading2Bold>
       )}

@@ -39,7 +39,7 @@ export default function Role() {
       >
         {/* H2 heading */}
         <div css={{display: "flex", flexFlow: "column", gap: 16, marginBottom: 16, [mq[2]]: {flexFlow: "row", alignItems: "center"}}}>
-          <h2 css={{margin: 0}}><Typography label="Get job-ready for in-demand careers" h1Semibold /></h2>
+          <h2 css={{margin: 0}}><Typography label="Get job-ready for in-demand careers" h1 /></h2>
           <LinkWithIcon
             label={`View more roles`}
             icon='arrowNext'

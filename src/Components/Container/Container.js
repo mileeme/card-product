@@ -3,7 +3,8 @@
 import styled from "@emotion/styled/macro";
 import { breakpoints, mq } from "../../Styles/tokens";
 
-const ContainerXS = styled.div({
+export default function Container(props) {
+  const ContainerXS = styled.div({
   boxSizing: "border-box",
   maxWidth: breakpoints.sm,
   padding: "0 16px",
@@ -49,7 +50,6 @@ const ContainerFlex = styled.div({
   },
 });
 
-export default function Container(props) {
   return (
     <>
       {props.flex && <ContainerFlex {...props}>{props.children}</ContainerFlex>}
@@ -57,7 +57,6 @@ export default function Container(props) {
       {props.sm && <ContainerSM {...props}>{props.children}</ContainerSM>}
       {props.md && <ContainerMD {...props}>{props.children}</ContainerMD>}
       {props.lg && <ContainerLG {...props}>{props.children}</ContainerLG>}
-      {/* {props.xl && <ContainerXL {...props}>{props.children}</ContainerXL>} */}
     </>
   );
 }

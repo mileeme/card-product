@@ -112,7 +112,7 @@ export default function Card(props) {
       {data.intro && (
         <IntroStyle>
           <div css={{ display: "grid", gap: 8 }}>
-            <Typography label={data.title} h1Semibold />
+            <Typography label={data.title} h1 />
             <Typography
               css={{ color: palette.interactive.neutral.default }}
               label={data.subTitle}

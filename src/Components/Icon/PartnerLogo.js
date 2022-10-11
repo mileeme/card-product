@@ -9,6 +9,8 @@ import uOfIllinoisLogo from "../../Assets/UofIllinois.png";
 import macquarieLogo from "../../Assets/macquarie.png";
 import metaSmallLogo from "../../Assets/metaSmall.png";
 import uofLondon from "../../Assets/uofLondon.png";
+import googleFullLogo from "../../Assets/googleFull.png";
+import linkedinLogo from "../../Assets/linkedinLogo.png";
 
 const intuit = intuitLogo;
 const michiganFull = michiganLogo;
@@ -20,12 +22,14 @@ const unt = untLogo;
 const uOfIllinois = uOfIllinoisLogo;
 const macquarie = macquarieLogo;
 const london = uofLondon;
+const googleFull = googleFullLogo;
+const linkedin = linkedinLogo;
 
 const hubspot =
   "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/05/117872e09a4e38b60b74ca4290ab0e/HubSpot-Academy-Logo-1-.png?auto=format%2Ccompress&dpr=2&w=150&h=150&fit=crop";
 
-const googleFull =
-  "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/45/a68dc45b194b0ba9838d92914a96db/square_google_full_color_10x.png?auto=format%2Ccompress&dpr=2&w=150&h=150&fit=crop";
+// const googleFull =
+//   "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/45/a68dc45b194b0ba9838d92914a96db/square_google_full_color_10x.png?auto=format%2Ccompress&dpr=2&w=150&h=150&fit=crop";
 
 const google =
   "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/http://coursera-university-assets.s3.amazonaws.com/4a/cb36835ae3421187080898a7ecc11d/Google-G_360x360.png?auto=format%2Ccompress&dpr=2&w=25&h=25&q=40";
@@ -106,4 +110,5 @@ export {
   macquarie,
   metaSmall,
   london,
+  linkedin,
 };

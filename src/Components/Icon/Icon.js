@@ -338,6 +338,42 @@ export default function IconSearch(props) {
     </svg>
   );
 
+  const share = (
+    <svg aria-labelledby="cds-react-aria-43-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-43"><title id="cds-react-aria-43-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M12.62 2.5a.88.88 0 100 1.76.88.88 0 000-1.76zm-1.88.88a1.88 1.88 0 11.645 1.417L5.778 8l5.607 3.203a1.88 1.88 0 11-.553.836L5.099 8.762a1.88 1.88 0 110-1.526l5.733-3.275a1.88 1.88 0 01-.092-.582zM4.22 7.738a.88.88 0 100 .524L3.762 8l.458-.262zm8.4 4.002a.88.88 0 100 1.76.88.88 0 000-1.76z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const bookmark = (
+    <svg aria-labelledby="cds-react-aria-667-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-667"><title id="cds-react-aria-667-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M3.5.5h9V16L8 12.625 3.5 16V.5zm1 1V14L8 11.375 11.5 14V1.5h-7z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const check = (
+    <svg aria-labelledby="cds-react-aria-781-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-781"><title id="cds-react-aria-781-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M15.74 3.672L6.225 14.168.323 8.736l1.354-1.472 4.419 4.068 8.163-9.004 1.482 1.344z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const comment = (
+    <svg aria-labelledby="cds-react-aria-115-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-115"><title id="cds-react-aria-115-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M3.983 1.5h8.034l.017.001a2.65 2.65 0 012.465 2.465l.001.017v5.084l-.001.017a2.65 2.65 0 01-2.465 2.465l-.017.001H6.21l-2.468 2.525c-.372.4-.934.511-1.408.324-.502-.199-.834-.695-.834-1.349V3.983l.001-.017a2.65 2.65 0 012.465-2.465l.017-.001zm.035 1A1.65 1.65 0 002.5 4.018v9.032c0 .296.128.39.201.419a.282.282 0 00.311-.077l.005-.006L5.79 10.55h6.192A1.65 1.65 0 0013.5 9.032V4.018A1.65 1.65 0 0011.982 2.5H4.018z" fill={handleColorChange(button)}></path><path d="M10.7 7.36a.9.9 0 100-1.8.9.9 0 000 1.8zM5.3 7.36a.9.9 0 100-1.8.9.9 0 000 1.8zM8 7.36a.9.9 0 100-1.8.9.9 0 000 1.8z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const bell = (
+    <svg aria-labelledby="cds-react-aria-865-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-865"><title id="cds-react-aria-865-title">Small</title><path d="M7.93 15.5c-.5 0-1-.18-1.38-.53-.63-.58-.76-1.5-.33-2.22l.15-.25h3.12l.15.24c.44.73.3 1.65-.33 2.23-.39.35-.88.53-1.38.53zm-.94-2c-.06.26.03.54.24.74.38.35 1.02.35 1.39 0 .22-.2.3-.47.25-.74H6.99z" fill={handleColorChange(button)}></path><path d="M13.56 13.5H2.45v-1.48c0-1.37.68-2.14 1.23-2.75.41-.46.66-.77.67-1.16V6.17c0-1.99 1.7-3.67 3.71-3.67 1.99 0 3.6 1.64 3.6 3.67v1.95c0 .39.26.69.67 1.15.55.62 1.23 1.38 1.23 2.75v1.48zm-10.11-1h9.11v-.48c0-.99-.47-1.52-.98-2.09-.45-.5-.91-1.02-.92-1.81V6.17C10.67 4.7 9.5 3.5 8.06 3.5c-1.44 0-2.71 1.25-2.71 2.67v1.95c-.01.79-.48 1.31-.92 1.81-.51.57-.98 1.11-.98 2.09v.48z" fill={handleColorChange(button)}></path><path d="M8.06 3.5c-.28 0-.5-.22-.5-.5V1c0-.28.22-.5.5-.5s.5.22.5.5v2c0 .28-.22.5-.5.5z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const correctAnswer = (
+    <svg aria-labelledby="cds-react-aria-151-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-151"><title id="cds-react-aria-151-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M1.5 6.5h3v3h-3v-3zm1 1v1h1v-1h-1zM1.5 11.5h3v3h-3v-3zm1 1v1h1v-1h-1zM14 8.5H7v-1h7v1zM14 13.5H7v-1h7v1zM14 3.5H7v-1h7v1zM6.354 1.354L3 4.707.646 2.354l.708-.708L3 3.293 5.646.646l.708.708z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const briefcase = (
+    <svg aria-labelledby="cds-react-aria-370-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-370"><title id="cds-react-aria-370-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M.5 3.5h15v10H.5v-10zm1 1v8h13v-8h-13z" fill={handleColorChange(button)}></path><path fillRule="evenodd" clipRule="evenodd" d="M3.61 13V4h1v9h-1zM11.39 13V4h1v9h-1zM6.94 2.707c-.193.16-.44.503-.44 1.293h-1c0-1.02.333-1.676.805-2.065A1.93 1.93 0 017.5 1.5h1c.242 0 .744.064 1.195.435.472.389.805 1.045.805 2.065h-1c0-.79-.247-1.134-.44-1.293A.932.932 0 008.5 2.5h-1a.932.932 0 00-.56.207z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const target = (
+    <svg aria-labelledby="cds-react-aria-472-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-472"><title id="cds-react-aria-472-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M6.49 7.8a1.7 1.7 0 100 3.4 1.7 1.7 0 000-3.4zm-2.7 1.7a2.7 2.7 0 115.4 0 2.7 2.7 0 01-5.4 0z" fill={handleColorChange(button)}></path><path fillRule="evenodd" clipRule="evenodd" d="M7.863 4.68a4.99 4.99 0 103.453 3.527.5.5 0 11.967-.254 5.99 5.99 0 11-4.146-4.234.5.5 0 11-.274.962zM13.473.12l.728 1.737 1.731.718-2.816 2.816-2.304-.125-.212-2.273L13.473.12zM11.64 3.367l.088.947.996.055 1.444-1.444-.73-.302-.311-.743-1.487 1.487z" fill={handleColorChange(button)}></path><path fillRule="evenodd" clipRule="evenodd" d="M11.626 4.439a.5.5 0 01-.005.707l-4.65 4.59a.5.5 0 01-.702-.712l4.65-4.59a.5.5 0 01.707.005z" fill={handleColorChange(button)}></path></svg>
+  )
+
+  const chevronDown2 = (
+    <svg aria-labelledby="cds-react-aria-73-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-73"><title id="cds-react-aria-73-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M8 11.293L1.354 4.646l-.708.708L8 12.707l7.354-7.353-.707-.708L8 11.293z" fill={handleColorChange(button)}></path></svg>
+  )
+
   return (
     <>
       {type === "search" && search}
@@ -353,6 +389,15 @@ export default function IconSearch(props) {
       {type === "star" && star}
       {type === "remove" && remove}
       {type === "triangle" && triangle}
+      {type === "share" && share}
+      {type === "bookmark" && bookmark}
+      {type === "check" && check}
+      {type === "comment" && comment}
+      {type === "bell" && bell}
+      {type === "correctAnswer" && correctAnswer}
+      {type === "briefcase" && briefcase}
+      {type === "target" && target}
+      {type === "chevronDown2" && chevronDown2}
     </>
   );
 }

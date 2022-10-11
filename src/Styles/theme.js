@@ -12,6 +12,31 @@ const mq = Object.values(breakpoints).map(
   (breakpoint) => `@media (min-width: ${breakpoint})`
 );
 
+//** Columns */
+const columns = {
+  1: "8.33%",
+  2: "16.66%",
+  3: "25%",
+  4: "33.33%",
+  5: "41.66%",
+  6: "50%",
+  7: "58.33%",
+  8: "66.66%",
+  9: "75%",
+  10: "83.33%",
+  11: "91.66%",
+  12: "100%",
+};
+const col = Object.values(columns).map(
+  (column) => column
+);
+const offset = Object.values(columns).map(
+  (column) => `margin-left: ${column}`
+);
+
+
+
+//** Colors */
 const palette = {
   white: colors.white,
   black: colors.black,
@@ -38,11 +63,13 @@ const palette = {
   neutral: {
     light: colors.gray[100],
     lightCopy: colors.gray[300],
+    dark: colors.gray[500],
     default: colors.gray[700],
     disabled: colors.gray[400],
     lohp: colors.gray[10],
   },
   information: {
+    default: colors.blue[600],
     warning: {
       dark: colors.yellow[800],
     }
@@ -50,7 +77,7 @@ const palette = {
   background: {
     grayLight: colors.gray[100],
     gray: colors.gray[300],
-    blueLight: colors.blue[100],
+    blueLight: colors.blue[50],
     blue: colors.blue[600],
     blueDark: colors.blue[900],
     yellowLight: colors.yellow[50],
@@ -256,17 +283,17 @@ const fontType = {
       lineHeight: "3rem",
     },
   },
+  // h1: {
+  //   fontSize: "1.75rem",
+  //   lineHeight: "2.25rem",
+  //   fontWeight: fontWeight.normal,
+  //   letterSpacing: letterSpacingLtr[50],
+  //   mq1: {
+  //     fontSize: "2rem",
+  //     lineHeight: "2.5rem",
+  //   },
+  // },
   h1: {
-    fontSize: "1.75rem",
-    lineHeight: "2.25rem",
-    fontWeight: fontWeight.normal,
-    letterSpacing: letterSpacingLtr[50],
-    mq1: {
-      fontSize: "2rem",
-      lineHeight: "2.5rem",
-    },
-  },
-  h1Semibold: {
     fontSize: "1.75rem",
     lineHeight: "2.25rem",
     fontWeight: fontWeight.semibold,
@@ -276,13 +303,13 @@ const fontType = {
       lineHeight: "2.5rem",
     },
   },
+  // h2: {
+  //   fontSize: "1.25rem",
+  //   lineHeight: "1.75rem",
+  //   fontWeight: fontWeight.normal,
+  //   letterSpacing: letterSpacingLtr[50],
+  // },
   h2: {
-    fontSize: "1.25rem",
-    lineHeight: "1.75rem",
-    fontWeight: fontWeight.normal,
-    letterSpacing: letterSpacingLtr[50],
-  },
-  h2Semibold: {
     fontSize: "1.25rem",
     lineHeight: "1.75rem",
     fontWeight: fontWeight.semibold,
@@ -332,4 +359,4 @@ const fontType = {
   },
 };
 
-export const theme = { palette, button, spacing, borderRadius, fontType, breakpoints, mq };
+export const theme = { palette, button, spacing, borderRadius, fontType, breakpoints, mq, columns, col, offset };
