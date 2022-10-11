@@ -26,15 +26,15 @@ export default function Tabs() {
     }
   }, [activeTab]);
 
-  const handleTabClick = (currentTab) => {
-    setActiveTab(currentTab);
-  };
+  // const handleTabClick = (currentTab) => {
+  //   setActiveTab(currentTab);
+  // };
 
-  const handleActiveStyle = (currentTab) => {
-    if (activeTab === currentTab) {
-      return liActiveBorder;
-    }
-  };
+  // const handleActiveStyle = (currentTab) => {
+  //   if (activeTab === currentTab) {
+  //     return liActiveBorder;
+  //   }
+  // };
 
   const Tabs = styled.ul({
     position: "relative",
