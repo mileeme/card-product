@@ -15,8 +15,8 @@ export default function Button(props) {
     align-items: center;
     height: ${size === "md" ? "40px" : "36px"};
     justify-content: center;
-    padding: ${(label && size === "md" && `0 ${spacing[200]}`) ||
-    (label && size === "sm" && `0 ${spacing[100]}`)};
+    padding: ${(label && size === "md" && `0 ${spacing[400]}`) ||
+    (label && size === "sm" && `0 ${spacing[200]}`)};
     // width: auto;
     margin-left: ${(margin === "negativeLeft" &&
       size == "md" &&

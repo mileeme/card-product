@@ -37,7 +37,7 @@ const skills = [
 
 const { palette } = theme;
 
-export default function Section1() {
+export default function Section2() {
   return (
     <Section css={{padding: 0, display: "grid", gap: 48}}>
 

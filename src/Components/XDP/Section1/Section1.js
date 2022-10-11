@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 // import HeroBanner from "../HeroBanner/HeroBanner";
-import {useState, useRef} from "react";
+import {useState, useEffect} from "react";
 import Section from "../../Container/Section";
 import Container from "../../Container/Container";
 import Typography from "../../Typography";
@@ -15,6 +15,10 @@ import Detail from "./Detail";
 import Link from "../../Link/Link";
 import RatingStar from "../../Rating/RatingStar";
 import { googleFull } from "../../Icon/PartnerLogo";
+import Breadcrumb from "../Breadcrumb/Breadcrumb";
+import Section2 from "../Section2/Section2";
+import Section3 from "../Section3/Section3";
+import Tabs from "../../Tab/Tabs";
 
 const skills = [
   "Data Visualization (DataViz)",
@@ -31,19 +35,71 @@ const skills = [
   "Spreadsheet"
 ]
 
-const { palette } = theme;
+const { palette, mq} = theme;
 
 export default function Section1() {
-
-  const summaryRef = useRef();
-  const enrollRef = useRef();
+  const [scrollPos, setScrollPos] = useState(0);
+  const [stickyHeader, setStickyHeader] = useState(false);
+  const [stickyButton, setStickyButton] = useState(false);
+  const [titleBottomPos, setTitleBottomPos] = useState(0);
+  const [enrollButtonBottomPos, setEnrollButtonBottomPos] = useState(0);
 
   // Get ref position
-  // If ref position === 0 then display header
+  useEffect(() => {
+    const titleBottom = document.getElementById("title").getBoundingClientRect().bottom;
+    const enrollButtonBottom = document.getElementById("button").getBoundingClientRect().bottom;
+    setTitleBottomPos(titleBottom);
+    setEnrollButtonBottomPos(enrollButtonBottom);
+  }, [scrollPos]);
 
-  return (
-    <Section css={{padding: 0, position: "relative"}}>
-      <div css={{height: 435, backgroundColor: "rgba(0, 86, 210, 0.05)", position: "absolute", top: 0, left: 0, right: 0, zIndex: 0}}></div>
+  // Get scroll position
+  const handleScroll = () => {
+    // Y scroll position
+    const currentScrollPos = Math.round(window.scrollY);
+    setScrollPos(currentScrollPos);
+
+
+    setStickyHeader(titleBottomPos < 0);
+    setStickyButton(enrollButtonBottomPos < 0);
+
+    if (titleBottomPos > 60) {
+      setStickyHeader(false);
+    }
+
+    if (enrollButtonBottomPos > 60) {
+      setStickyButton(false);
+    }
+  };
+
+  // Event listener for scroll
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [scrollPos]);
+
+  return (<Section css={{padding: 0, position: "relative"}}>
+
+    {/* Sticky header */}
+    <div css={{position: "sticky", display: stickyHeader ? "grid" : "none", top: 0, left: 0, right: 0, backgroundColor: palette.white, zIndex: 100}}>
+      <Container css={{display: "flex", alignItems: "center", height: 48, justifyContent: "space-between"}} lg>
+        <div css={{display: "flex", alignItems: "center", gap: 16}}>
+          <img src={googleFull} width="78px" />
+          <Typography label="Google Project Management Professional Certificate" h3Bold />
+        </div>
+        <Button css={{display: stickyButton ? "block" : "none"}} variant="primary" size="sm" label="Enroll for Free" />
+      </Container>
+      <div css={{width: "100%", borderBottom: `1px solid ${palette.neutral.lightCopy}`}}></div>
+      <Container css={{height: 52, display: "flex", alignItems: "center"}} lg><Tabs /></Container>
+    </div>
+
+    {/* Breadcrumb */}
+    <Breadcrumb />
+
+    {/* Section 1 */}
+    <Section css={{padding: 0}}>
+      {/* Hero banner background color hack */}
+      <div css={{[mq[2]]:{height: 435}, height: 500, backgroundColor: "rgba(0, 86, 210, 0.05)", position: "absolute", top: 0, left: 0, right: 0, zIndex: 0}}></div>
       <Container css={{display: "flex", gap: 32}} lg>
         {/* Left */}
         <Col type="8" gap="32" totalGap="1">
@@ -53,11 +109,11 @@ export default function Section1() {
 
           {/* Main summary */}
           <div css={{display: "grid", gap: 16}}>
-            <div css={{display: "grid", gap: 16}}>
+            <div id="title" css={{display: "grid", gap: 16}}>
               <img src={googleFull} width="145px"/>
               <Typography label="Google Data Analytics Professional Certificate" d2Semibold />
             </div>
-            <Typography ref={summaryRef} label="This is your path to a career in data analytics. In this program, you’ll learn in-demand skills that will have you job-ready in less than 6 months. No degree or experience required." body1 />
+            <Typography label="This is your path to a career in data analytics. In this program, you’ll learn in-demand skills that will have you job-ready in less than 6 months. No degree or experience required." body1 />
           </div>
           {/* Value props */}
           <div css={{display: "flex", gap: 64}}>
@@ -187,7 +243,7 @@ export default function Section1() {
               {/* Rating */}
               <RatingStar rating="4.8 / 5" reviews="14,536" />
 
-              <Button label="Enroll" variant="primary" size="md" css={{height: 55}} ref={enrollRef} />
+              <Button id="button" label="Enroll" variant="primary" size="md" css={{height: 55}} />
 
               {/* Category */}
               <div css={{display: "flex", gap: 8}}>
@@ -211,5 +267,7 @@ export default function Section1() {
       </Container>
 
     </Section>
-  )
+    <Section2 />
+    <Section3 />
+  </Section>)
 }
