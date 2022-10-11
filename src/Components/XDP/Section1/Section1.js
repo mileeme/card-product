@@ -42,30 +42,24 @@ export default function Section1() {
   const [scrollPos, setScrollPos] = useState(0);
   const [stickyHeader, setStickyHeader] = useState(false);
   const [stickyButton, setStickyButton] = useState(false);
-  // const [titleBottomPos, setTitleBottomPos] = useState(0);
-  // const [enrollButtonBottomPos, setEnrollButtonBottomPos] = useState(0);
 
   // Get ref position
   useEffect(() => {
-    // const titleBottom = document.getElementById("title").getBoundingClientRect().bottom;
-    // const enrollButtonBottom = document.getElementById("button").getBoundingClientRect().bottom;
-    
-    // setTitleBottomPos(titleBottom);
-    // setEnrollButtonBottomPos(enrollButtonBottom);
-
-    // setStickyHeader(titleBottom < 60);
-    // setStickyButton(enrollButtonBottom < 100);
 
     const titleRect = document.getElementById("title").getBoundingClientRect();
     const enrollButtonRect = document.getElementById("button").getBoundingClientRect();
+
     console.log(`bottom: ${titleRect.bottom}, height: ${titleRect.height}`)
-    setStickyHeader(titleRect.bottom < titleRect.height + 30)
-    setStickyButton(enrollButtonRect.bottom < 100)
+    if (titleRect.bottom < titleRect.height + 30) {
+      setStickyHeader(true)
+    } else {
+      setStickyHeader(false)
+    }
 
-
-    if (scrollPos < 100) {
-      setStickyHeader(false);
-      setStickyButton(false);
+    if (enrollButtonRect.bottom < 100) {
+      setStickyButton(true)
+    } else {
+      setStickyButton(false)
     }
   }, [scrollPos]);
 
@@ -86,7 +80,16 @@ export default function Section1() {
   return (<Section css={{padding: 0, position: "relative"}}>
 
     {/* Sticky header */}
-    <div css={{position: "sticky", display: stickyHeader ? "block" : "none", top: 0, backgroundColor: palette.white, zIndex: 100}}>
+    <div css={{
+      position: "fixed",         
+      top: stickyHeader ? 0 : -150,
+      left: 0, 
+      right: 0,
+      height: stickyHeader ? 100 : 96,
+      transition: "all 0.4s cubic-bezier(0, 0, 0.35, 1.07)", 
+      backgroundColor: palette.white, 
+      zIndex: 100}}
+    >
       <Container css={{display: "flex", alignItems: "center", height: 48, justifyContent: "space-between"}} lg>
         <div css={{display: "flex", alignItems: "center", gap: 16}}>
           <img src={googleFull} width="78px" />
