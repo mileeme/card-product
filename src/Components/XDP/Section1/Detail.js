@@ -46,7 +46,7 @@ export default function Detail(props) {
     {/* icon */}
     <div css={{height: 20, display: "flex", alignItems: "center"}}>
       {iconType && <Icon type={iconType} size="sm" button="ghostNeutral" />}
-      {partnerType && <img src={partnerType} width="20px" />}
+      {partnerType && <img src={linkedin} width="20px" />}
     </div>
 
     {/* label */}
