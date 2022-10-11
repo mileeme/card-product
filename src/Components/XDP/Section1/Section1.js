@@ -42,25 +42,29 @@ export default function Section1() {
   const [scrollPos, setScrollPos] = useState(0);
   const [stickyHeader, setStickyHeader] = useState(false);
   const [stickyButton, setStickyButton] = useState(false);
-  const [titleBottomPos, setTitleBottomPos] = useState(0);
-  const [enrollButtonBottomPos, setEnrollButtonBottomPos] = useState(0);
+  // const [titleBottomPos, setTitleBottomPos] = useState(0);
+  // const [enrollButtonBottomPos, setEnrollButtonBottomPos] = useState(0);
 
   // Get ref position
   useEffect(() => {
-    const titleBottom = document.getElementById("title").getBoundingClientRect().bottom;
-    const enrollButtonBottom = document.getElementById("button").getBoundingClientRect().bottom;
-    console.log(enrollButtonBottom)
-    setTitleBottomPos(titleBottom);
-    setEnrollButtonBottomPos(enrollButtonBottom);
+    // const titleBottom = document.getElementById("title").getBoundingClientRect().bottom;
+    // const enrollButtonBottom = document.getElementById("button").getBoundingClientRect().bottom;
+    
+    // setTitleBottomPos(titleBottom);
+    // setEnrollButtonBottomPos(enrollButtonBottom);
 
-    setStickyHeader(titleBottom < 60);
-    setStickyButton(enrollButtonBottom < 100);
+    // setStickyHeader(titleBottom < 60);
+    // setStickyButton(enrollButtonBottom < 100);
 
-    if (titleBottom > 60) {
+    const titleRect = document.getElementById("title").getBoundingClientRect();
+    const enrollButtonRect = document.getElementById("button").getBoundingClientRect();
+    console.log(`bottom: ${titleRect.bottom}, height: ${titleRect.height}`)
+    setStickyHeader(titleRect.bottom < titleRect.height + 30)
+    setStickyButton(enrollButtonRect.bottom < 100)
+
+
+    if (scrollPos < 100) {
       setStickyHeader(false);
-    }
-
-    if (enrollButtonBottom > 100) {
       setStickyButton(false);
     }
   }, [scrollPos]);
