@@ -37,7 +37,7 @@ export default function Level() {
   const animateUp = keyframes`
     0% {
       opacity: 0;
-      transform: translateY(800px);
+      transform: translateY(600px);
     }
     100% {
       opacity: 1;
@@ -195,7 +195,7 @@ export default function Level() {
             {/* Header */}
             <div css={{padding: "16px 32px", borderBottom: `1px solid ${palette.neutral.lightCopy}`, display: "flex", flexFlow: "column", gap: 8}}>
               <Typography label="Expressive decelerate" h2 />
-              <Typography label="800ms" body1/>
+              <Typography label="1200ms" body1/>
             </div>
 
             {/* Summary */}
