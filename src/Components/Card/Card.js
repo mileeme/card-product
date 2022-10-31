@@ -46,7 +46,8 @@ export default function Card(props) {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: 171px;
+    // height: 171px;
+    aspect-ratio: 16 / 9;
     border-radius: 8px;
     background-image: url(${data.course_img});
     background-repeat: no-repeat;

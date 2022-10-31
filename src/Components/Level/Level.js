@@ -1,26 +1,18 @@
 /** @jsxImportSource @emotion/react */
 
-// import HeroBanner from "../HeroBanner/HeroBanner";
 import { keyframes } from "@emotion/react";
-import {useState, useEffect} from "react";
-import Section from "../../Container/Section";
-import Container from "../../Container/Container";
-import Typography from "../../Typography";
-import Button from "../../Button/Button";
-import Col from "../../Container/Col";
-import Icon from "../../Icon/Icon";
-import TagGroup from "../../Tag/TagGroup";
-import Tag from "../../Tag/Tag";
-import { theme } from "../../../Styles/theme";
-import Detail from "./Detail";
-import Link from "../../Link/Link";
-import RatingStar from "../../Rating/RatingStar";
-import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import Section2 from "../Section2/Section2";
-import Section3 from "../Section3/Section3";
-import Tabs from "../../Tab/Tabs";
-import Accordion from "../../Accordion/Accordion";
-import { googleFull } from "../../Icon/PartnerLogo";
+import Section from "../Container/Section";
+import Container from "../Container/Container";
+import Typography from "../Typography";
+import Button from "../Button/Button";
+import Col from "../Container/Col";
+import Icon from "../Icon/Icon";
+import TagGroup from "../Tag/TagGroup";
+import Tag from "../Tag/Tag";
+import { theme } from "../../Styles/theme";
+import Section2 from "../XDP/Section2/Section2";
+import Tabs from "../Tab/Tabs";
+import { googleFull } from "../Icon/PartnerLogo";
 
 const skills = [
   "Data Visualization (DataViz)",
@@ -39,95 +31,33 @@ const skills = [
 
 const { palette, mq} = theme;
 
-export default function Section1() {
-  const [scrollPos, setScrollPos] = useState(0);
-  const [stickyHeader, setStickyHeader] = useState(false);
-  const [stickyButton, setStickyButton] = useState(false);
-
-  // Get ref position
-  useEffect(() => {
-
-    const titleRect = document.getElementById("title").getBoundingClientRect();
-    const enrollButtonRect = document.getElementById("button").getBoundingClientRect();
-
-    console.log(`bottom: ${titleRect.bottom}, height: ${titleRect.height}`)
-    if (titleRect.bottom < titleRect.height + 30) {
-      setStickyHeader(true)
-    } else {
-      setStickyHeader(false)
-    }
-
-    if (enrollButtonRect.bottom < 100) {
-      setStickyButton(true)
-    } else {
-      setStickyButton(false)
-    }
-  }, [scrollPos]);
-
-  // Get scroll position
-  const handleScroll = () => {
-    // Y scroll position
-    const currentScrollPos = Math.round(window.scrollY);
-    setScrollPos(currentScrollPos);
-  };
-
-  // Event listener for scroll
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [scrollPos]);
-
+export default function Level() {
 
   // KIM style
   const animateUp = keyframes`
-    from {
+    0% {
       opacity: 0;
-      transform: translate3d(1px, 80px, 40px);
-      box-shadow: 0px 0px 0px -8px rgba(0, 0, 0, 0.1),0 0 0px -16px rgba(0, 0, 0, 0.1);
+      transform: translateY(800px);
     }
-    to {
+    100% {
       opacity: 1;
-      transform: translate3d(0);
-      box-shadow: 0px 0px 40px -8px rgba(0, 0, 0, 0.16),0 0 24px -16px rgba(0, 0, 0, 0.16);
+      transform: translateY(0);
     }
   `
 
   // Animation speed
-  const speed1 = "0.8s";
-  const delay1 = "0.5s";
-  const speedType1 = "cubic-bezier(0.4, 0, 1, 1)";
-  // const speedType1 = "cubic-bezier(0, 1, 0.9, 1)";
+  const durationExtraLong2 = "1200ms";
+  const durationExtraLong4 = "1600ms";
+  const easingStandardDecelerate = "cubic-bezier(0, 0, 0, 1)";
+  const easingEmphasizedDecelerate = "cubic-bezier(0.05, 0.7, 0.1, 1)";
   const direction = "forwards";
 
 
   return (<Section css={{padding: 0, position: "relative"}}>
 
-    {/* Sticky header */}
-    <div css={{
-      position: "fixed",         
-      top: stickyHeader ? 0 : -150,
-      left: 0, 
-      right: 0,
-      height: stickyHeader ? 95 : 96,
-      transition: "all 0.4s cubic-bezier(0, 0, 0.35, 1.07)", 
-      boxShadow: "0px 2px 12px rgba(0, 0, 0, 0.24)",
-      backgroundColor: palette.white, 
-      zIndex: 100}}
-    >
-      <Container css={{display: "flex", alignItems: "center", height: 48, justifyContent: "space-between"}} lg>
-        <div css={{display: "flex", alignItems: "center", gap: 16}}>
-          <img src={googleFull} width="78px" />
-          <Typography label="Google Project Management Professional Certificate" h3Bold />
-        </div>
-        <Button css={{display: stickyButton ? "block" : "none"}} variant="primary" size="sm" label="Enroll for Free" />
-      </Container>
-      <div css={{width: "100%", borderBottom: `1px solid ${palette.neutral.lightCopy}`}}></div>
-      <Container css={{height: 52, display: "flex", alignItems: "center"}} lg><Tabs /></Container>
-    </div>
 
     {/* Breadcrumb */}
-    <Breadcrumb />
+    <div>Breadcrumb</div>
 
     {/* Section 1 */}
     <Section css={{padding: 0}}>
@@ -233,13 +163,13 @@ export default function Section1() {
             <div css={{display: "flex", gap: 24}}>
 
               {/* Single detail */}
-              <Detail iconType="comment" title="English" subtitle="Subtitles: English, Spanish," button="+7 more" />
+              <div css={{height: 16, width: "100%", backgroundColor: palette.background.gray}}></div>
 
               {/* Single detail */}
-              <Detail iconType="bell" title="Recently updated" subtitle="May 2022" />
+              <div css={{height: 16, width: "100%", backgroundColor: palette.background.gray}}></div>
 
               {/* Single detail */}
-              <Detail partnerType="linkedin" title="Shareable certificate" subtitle="Share on your LinkedIn profile" />
+              <div css={{height: 16, width: "100%", backgroundColor: palette.background.gray}}></div>
             </div>
           </div>
           </div>
@@ -248,56 +178,49 @@ export default function Section1() {
         {/* Right */}
         <Col type="4" gap="32" totalGap="1" css={{padding: "48px 0"}}>
 
-          {/* KIM */}
+          {/* 1 KIM EMPHASIZED DECELERATE / DURATION EXTRA LONG 2 */}
           <div css={{
-            opacity: 0,
             width: 428, 
+            height: 489,
             position: "sticky", 
             top: 120, 
             right: 0, 
             borderRadius: 8, 
             backgroundColor: palette.white,
-            animation: `${animateUp} ${speedType1} ${speed1} ${direction} ${delay1}`,
+            boxShadow: "0px 0px 40px -8px rgba(0, 0, 0, 0.16),0 0 24px -16px rgba(0, 0, 0, 0.16)",
+            animation: `${animateUp} ${easingEmphasizedDecelerate} ${durationExtraLong2}`,
           }}
           >
 
             {/* Header */}
-            <div css={{padding: "16px 32px", borderBottom: `1px solid ${palette.neutral.lightCopy}`, display: "flex", flexFlow: "column"}}>
-              <Typography label="Professional Certificate — 8 course series" h2 />
-              <Typography label="Earn a career credential that demonstrates your expertise" body2 />
+            <div css={{padding: "16px 32px", borderBottom: `1px solid ${palette.neutral.lightCopy}`, display: "flex", flexFlow: "column", gap: 8}}>
+              <Typography label="Expressive decelerate" h2 />
+              <Typography label="800ms" body1/>
             </div>
 
             {/* Summary */}
             <div css={{padding: "16px 32px", display: "flex", flexFlow: "column", gap: 16 }}>
               {/* Level */}
               <div css={{display: "flex", flexFlow: "column"}}>
-                <Typography label="Intermediate" css={{padding: 0, margin: 0}} h2 />
-                <Link label="Recommended experience" size="body2" />
+                <div css={{height: "1.25rem", width: "100%", backgroundColor: palette.background.gray}}></div>
               </div>
               {/* Duration */}
-              <div css={{display: "flex", flexFlow: "column"}}>
-                <Typography label="6 months at 10 hours/week" css={{padding: 0, margin: 0}} h2 />
-                <Typography label="240 hours (approximately)" body2 />
+              <div css={{display: "flex", flexFlow: "column", gap: 8}}>
+                <div css={{height: "1.25rem", width: "100%", backgroundColor: palette.background.gray}}></div>
+                <div css={{height: "1.25rem", width: "80%", backgroundColor: palette.background.gray}}></div>
               </div>
               {/* Schedule */}
-              <div css={{display: "flex", flexFlow: "column"}}>
-                <Typography label="Flexible schedule" css={{padding: 0, margin: 0}} h2 />
-                <Typography label="Set and maintain flexible deadlines" body2 />
+              <div css={{display: "flex", flexFlow: "column", gap: 8}}>
+                <div css={{height: "1.25rem", width: "100%", backgroundColor: palette.background.gray}}></div>
+                <div css={{height: "1.25rem", width: "80%", backgroundColor: palette.background.gray}}></div>
               </div>
               {/* Rating */}
-              <RatingStar rating="4.8 / 5" reviews="14,536" />
+              <div css={{height: 16, width: 120, backgroundColor: palette.background.gray}}></div>
 
               <Button id="button" label="Enroll" variant="primary" size="md" css={{height: 55}} />
 
               {/* Category */}
-              <div css={{display: "flex", gap: 8}}>
-                <div css={{display: "flex", alignItems: "center", gap: 4}}>
-                  <span css={{backgroundColor: palette.background.blue, borderRadius: 4, height: 16, padding: "0 4px", display: "flex", alignItems: "center"}}><Typography label="PLUS" css={{color: palette.white}} h4/></span>
-                  <Link label="Included with Coursera Plus" size="body2" />
-                </div>
-                <Typography label="•" css={{color: palette.neutral.default}} body2 />
-                <Link label="Financial aid available" size="body2" />
-              </div>   
+              <div css={{height: 16, width: 180, backgroundColor: palette.background.gray}}></div>
               
               {/* Footer */}
               <div css={{borderTop: `1px solid ${palette.neutral.lightCopy}`, margin: "16px 0 0 0", paddingTop: 16 }}>
@@ -312,6 +235,5 @@ export default function Section1() {
 
     </Section>
     <Section2 />
-    <Section3 />
   </Section>)
 }

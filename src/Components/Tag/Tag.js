@@ -6,11 +6,14 @@ import styled from "@emotion/styled/macro";
 
 const { palette } = theme;
 
+const TagWrapper = styled.div({
+  display: "inline-block"
+})
 const TagStyle = styled.div({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  height: 22,
+  height: "100%",
   padding: "0 8px",
   borderRadius: 4,
   border: `1px solid ${palette.neutral.default}`,
@@ -20,8 +23,10 @@ const TagStyle = styled.div({
 export default function Tag(props) {
   const {label} = props
   return (
-    <TagStyle>
-      <Typography label={label} body2 />
-    </TagStyle>
+    <TagWrapper>
+      <TagStyle>
+        <Typography label={label} body2 />
+      </TagStyle>
+    </TagWrapper>
   ) 
 }

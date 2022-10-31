@@ -11,6 +11,7 @@ import Link from "../../Link/Link";
 import RatingStar from "../../Rating/RatingStar";
 import Accordion from "../../Accordion/Accordion";
 import xdpInstructor from "../../../Assets/xdpInstructorKIM.png";
+import Tag from "../../Tag/Tag";
 
 export default function Section3() {
   const { palette } = theme;
@@ -69,8 +70,47 @@ export default function Section3() {
           
         </Col>
 
+
+        {/* NEW NEW NEW NEW NEW WIP WIP WIP */}
         {/* Instructor and partner */}
-        {/* <div css={{width: 459, padding: 32, border: `1px solid ${palette.neutral.lightCopy}`, borderRadius: 8}}>hello</div> */}
+        <div css={{width: 459, padding: 32, border: `1px solid ${palette.neutral.lightCopy}`, borderRadius: 8}}>
+
+          {/* Title */}
+          <h3 css={{margin: 0, padding: 0}}>
+            <Typography label="Instructors" h2/>
+          </h3>
+
+          {/* Instructor meta data */}
+          <div css={{display: "flex", gap: 16}}>
+            {/* Contextual help */}
+            <div css={{display: "flex", alignItems: "center", gap: 4}}>
+              <Typography label="Instructor ratings" css={{color: palette.neutral.default}} body2 />
+              <div css={{height: 14, width: 14, borderRadius: 100, backgroundColor: palette.background.blue, display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 12, color: palette.white}}>i</div>
+            </div>
+            {/* Rating */}
+            <RatingStar rating="4.5" reviews="1.7k" />
+          </div>
+
+          {/* Instructor avatar */}
+          <div css={{display: "flex", gap: 16}}>
+            <div css={{height: 64, width: 64, backgroundColor: palette.neutral.disabled, border: `1px solid ${palette.white}`, borderRadius: 100}}></div>
+            <div css={{display: "grid" }}>
+              <Tag label="Top instructor" />
+              <Link label="Taught by Google Staff" size="h3" />
+              <Typography label="Google" body2 />
+              {/* Meta data */}
+              <div css={{display: "flex", gap: 8, alignItems: "center"}}>
+                <Typography label="12 Courses" css={{color: palette.neutral.default, whiteSpace: "nowrap"}} body2 />
+                <Typography label="•" css={{color: palette.neutral.default, whiteSpace: "nowrap"}} body2 />
+                <Typography label="1,368,401 learners" css={{color: palette.neutral.default, whiteSpace: "nowrap"}} body2 />
+              </div>
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* END OF NEW */}
+        
         <img src={xdpInstructor} width="459px" />
       </Container>
 

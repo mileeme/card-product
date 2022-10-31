@@ -7,14 +7,14 @@ import Typography from "../Typography";
 import styles from "./HeaderTabs.module.scss";
 
 // This is the most up to date Header tab (7/28)
-export default function HeaderTabs() {
-  const [selected, setSelected] = useState("LOHP");
+export default function HeaderTabs2() {
+  const [selected, setSelected] = useState("Motion");
   const [xPos, setXPos] = useState(0);
   const [gliderWidth, setGliderWidth] = useState(45);
-  const lWidth = 38 + 16;
-  const sWidth = 46 + 16;
-  const xWidth = 27 + 16;
-  const mWidth = 47 + 16;
+  const mWidth = 37 + 16;
+  const lWidth = 35 + 16;
+  // const xWidth = 27 + 16;
+  // const mWidth = 47 + 16;
   // const gWidth = 84 + 16;
 
   // theme
@@ -40,18 +40,18 @@ export default function HeaderTabs() {
 
     // If window resize, re-render xPos?
     useEffect(() => {
-      if (selected === "Search") {
-        setXPos(lWidth + tabGap);
-        setGliderWidth(sWidth);
+      if (selected === "Level") {
+        setXPos(mWidth + tabGap);
+        setGliderWidth(lWidth);
       // } else if (selected === "Campus") {
-      //   setXPos(lWidth + sWidth + tabGap * 2);
+      //   setXPos(mWidth + lWidth + tabGap * 2);
       //   setGliderWidth(cWidth);
       // } else if (selected === "Government") {
-      //   setXPos(lWidth + sWidth + cWidth + tabGap * 3);
+      //   setXPos(mWidth + lWidth + cWidth + tabGap * 3);
       //   setGliderWidth(gWidth);
       } else {
         setXPos(0);
-        setGliderWidth(lWidth);
+        setGliderWidth(mWidth);
       }
     }, [windowWidth]);
 
@@ -60,18 +60,12 @@ export default function HeaderTabs() {
 
   // Set glider width and x position when selected
   useEffect(() => {
-    if (selected === "Search") {
-      setXPos(lWidth + tabGap);
-      setGliderWidth(sWidth);
-    } else if (selected === "XDP") {
-      setXPos(lWidth + sWidth + tabGap * 2);
-      setGliderWidth(xWidth);
-    } else if (selected === "Motion") {
-      setXPos(lWidth + sWidth + xWidth + tabGap * 3);
-      setGliderWidth(mWidth);
+    if (selected === "Level") {
+      setXPos(mWidth + tabGap);
+      setGliderWidth(lWidth);
     } else {
       setXPos(0);
-      setGliderWidth(lWidth);
+      setGliderWidth(mWidth);
     }
   }, [selected]);
 
@@ -100,47 +94,24 @@ export default function HeaderTabs() {
             css={{ width: lWidth }}
             onClick={handleTabClick}
           >
-            {selected === "LOHP" ? 
-              <Link css={{textDecoration: "none"}} to="/"><Typography label='LOHP' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/"><Typography label='LOHP' body1 /></Link>    
-            }
-          </div>
-
-          {/* Search */}
-          <div
-            className={styles.tab}
-            css={{ width: sWidth }}
-            onClick={handleTabClick}
-          >
-            {selected === "Search" ? 
-              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Search' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/search"><Typography label='Search' body1 /></Link>    
-            }
-          </div>
-
-          {/* XDP */}
-          <div
-            className={styles.tab}
-            css={{ width: xWidth }}
-            onClick={handleTabClick}
-          >
-            {selected === "XDP" ? 
-              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='XDP' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='XDP' body1 /></Link>
-            }
-          </div>
-
-          {/* Motion */}
-          <div
-            className={styles.tab}
-            css={{ width: mWidth }}
-            onClick={handleTabClick}
-          >
             {selected === "Motion" ? 
-              <Link css={{textDecoration: "none"}} to="/motion"><Typography label='Motion' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/motion"><Typography label='Motion' body1 /></Link>
+              <Link css={{textDecoration: "none"}} to="/"><Typography label='Motion' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/"><Typography label='Motion' body1 /></Link>    
             }
           </div>
+
+          {/* Level */}
+          <div
+            className={styles.tab}
+            css={{ width: lWidth }}
+            onClick={handleTabClick}
+          >
+            {selected === "Level" ? 
+              <Link css={{textDecoration: "none"}} to="/level"><Typography label='Level' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/level"><Typography label='Level' body1 /></Link>    
+            }
+          </div>
+
           {/* Glider */}
           <div
             className={styles.glider}
