@@ -15,7 +15,7 @@ export default function AccordionTest(props) {
    <>
     <Container css={{display: "flex", gap: 32, marginTop: 80}} lg>
       <Col type="8" gap="32" totalGap="1" className="accordion-list">
-        <Accordion backgroundColor={true} contentBackground={true} title="Showing hit target area on header">This accordion is to just to display the hit target area and content area via background colors</Accordion>
+        <Accordion linkBackground={true} controllerBackground={true} contentBackground={true} title="Showing hit target area on header">This accordion displays the header hit target area and content area via background colors</Accordion>
       {
         data.map((item, index) => {
           return <Accordion title={item.title}  key={index}>{item.content}</Accordion>

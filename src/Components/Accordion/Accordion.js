@@ -22,13 +22,15 @@ export default function Accordion(props) {
       <div className="header">
 
         {/* Title */}
-        <div className="title">
-          <a href="#"><Typography label={props.title} h3/></a>
-          <div css={{height: 14, width: 160, backgroundColor: palette.background.gray}}></div>
+        <div className="title" css={{backgroundColor: props.linkBackground ? button.background.hover.ghostPrimary : palette.white}}>
+          <a className="accordion-link" href="http://coursera.org" target="_blank">
+            <Typography label={props.title} h3/>
+            <div css={{height: 14, width: 160, backgroundColor: palette.background.gray}}></div>
+          </a>
         </div>
 
         {/* Controller */}
-        <div className="controller" onClick={() => setIsOpen(!isOpen)} css={{backgroundColor: props.backgroundColor ? palette.background.grayLight : palette.white}}>
+        <div className="controller" onClick={() => setIsOpen(!isOpen)} css={{backgroundColor: props.controllerBackground ? button.background.hover.ghostPrimary : palette.white}}>
           
           {/* Button label */}
           <div
