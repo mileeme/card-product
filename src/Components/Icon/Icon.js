@@ -1,7 +1,7 @@
 import { theme } from "../../Styles/theme";
 import styled from "@emotion/styled/macro";
 
-export default function IconSearch(props) {
+export default function Icon(props) {
   const { type, button, size } = props;
   const { palette } = theme;
 

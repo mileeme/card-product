@@ -1,4 +1,7 @@
+/** @jsxImportSource @emotion/react */
 
+
+import {useState, useRef} from "react"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import HeaderTabs2 from "./Components/Header/HeaderTabs2";
 import Header from "./Components/Header/Header";
@@ -6,9 +9,13 @@ import Header from "./Components/Header/Header";
 // import Discover from "./Components/Discover/Discover";
 // import Xdp from "./Components/XDP/Xdp";
 import Motion from "./Components/Motion/Motion";
-import Level from "./Components/Level/Level";
+import MotionTest from "./Components/Motion/MotionTest";
+import AccordionTest from "./Components/Accordion/AccordionTest";
+// import "./Components/Accordion/test.css";
 
 function App() {
+  const [Test, setTest] = useState(false);
+  const testRef = useRef();
 
   return (
     <BrowserRouter>
@@ -25,7 +32,8 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Motion />} />
-          <Route exact path="/level" element={<Level />} />
+          <Route exact path="/motion-test" element={<MotionTest />} />
+          <Route exact path="/accordion" element={<AccordionTest />} />
         </Routes>
       </main>
     </BrowserRouter>

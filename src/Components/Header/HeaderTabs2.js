@@ -9,65 +9,13 @@ import styles from "./HeaderTabs.module.scss";
 // This is the most up to date Header tab (7/28)
 export default function HeaderTabs2() {
   const [selected, setSelected] = useState("Motion");
-  const [xPos, setXPos] = useState(0);
-  const [gliderWidth, setGliderWidth] = useState(45);
-  const mWidth = 37 + 16;
-  const lWidth = 35 + 16;
-  // const xWidth = 27 + 16;
-  // const mWidth = 47 + 16;
-  // const gWidth = 84 + 16;
 
   // theme
   const {palette, mq} = theme
 
   // Listen for window size
-  const windowSize = useWindowWidth();
-  // const tabGap = windowSize > 600 ? 32 : 40;
   const tabGap = 32;
 
-  // Get window resize width
-  function useWindowWidth() {
-    const [windowWidth, setWindowWidth] = useState();
-
-    useEffect(() => {
-      function handleWindowResize() {
-        setWindowWidth(window.innerWidth);
-      }
-      window.addEventListener("resize", handleWindowResize);
-      handleWindowResize();
-      return () => window.removeEventListener("resize", handleWindowResize);
-    }, []);
-
-    // If window resize, re-render xPos?
-    useEffect(() => {
-      if (selected === "Level") {
-        setXPos(mWidth + tabGap);
-        setGliderWidth(lWidth);
-      // } else if (selected === "Campus") {
-      //   setXPos(mWidth + lWidth + tabGap * 2);
-      //   setGliderWidth(cWidth);
-      // } else if (selected === "Government") {
-      //   setXPos(mWidth + lWidth + cWidth + tabGap * 3);
-      //   setGliderWidth(gWidth);
-      } else {
-        setXPos(0);
-        setGliderWidth(mWidth);
-      }
-    }, [windowWidth]);
-
-    return windowWidth;
-  }
-
-  // Set glider width and x position when selected
-  useEffect(() => {
-    if (selected === "Level") {
-      setXPos(mWidth + tabGap);
-      setGliderWidth(lWidth);
-    } else {
-      setXPos(0);
-      setGliderWidth(mWidth);
-    }
-  }, [selected]);
 
   function handleTabClick(e) {
     setSelected(e.currentTarget.innerText);
@@ -91,7 +39,6 @@ export default function HeaderTabs2() {
           {/* LOHP */}
           <div
             className={styles.tab}
-            css={{ width: lWidth }}
             onClick={handleTabClick}
           >
             {selected === "Motion" ? 
@@ -100,27 +47,28 @@ export default function HeaderTabs2() {
             }
           </div>
 
-          {/* Level */}
+          {/* Motion test */}
           <div
             className={styles.tab}
-            css={{ width: lWidth }}
             onClick={handleTabClick}
           >
-            {selected === "Level" ? 
-              <Link css={{textDecoration: "none"}} to="/level"><Typography label='Level' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/level"><Typography label='Level' body1 /></Link>    
+            {selected === "MotionTest" ? 
+              <Link css={{textDecoration: "none"}} to="/motion-test"><Typography label='MotionTest' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/motion-test"><Typography label='MotionTest' body1 /></Link>    
             }
           </div>
 
-          {/* Glider */}
+          {/* Accordion test */}
           <div
-            className={styles.glider}
-            css={{
-              backgroundColor: palette.white,
-              width: `${gliderWidth}px`,
-              transform: selected && `translateX(${xPos}px)`,
-            }}
-          ></div>
+            className={styles.tab}
+            onClick={handleTabClick}
+          >
+            {selected === "Accordion" ? 
+              <Link css={{textDecoration: "none"}} to="/accordion"><Typography label='Accordion' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/accordion"><Typography label='Accordion' body1 /></Link>    
+            }
+          </div>
+
         </div>
       </Container>
     </nav>

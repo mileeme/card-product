@@ -31,7 +31,7 @@ const skills = [
 
 const { palette, mq} = theme;
 
-export default function Level() {
+export default function MotionTest() {
 
   // KIM style
   const animateUp = keyframes`
