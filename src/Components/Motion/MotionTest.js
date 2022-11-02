@@ -46,6 +46,7 @@ export default function MotionTest() {
   `
 
   // Animation speed
+  const durationExtraLong1 = "800ms";
   const durationExtraLong2 = "1200ms";
   const durationExtraLong4 = "1600ms";
   const easingStandardDecelerate = "cubic-bezier(0, 0, 0, 1)";
@@ -178,7 +179,7 @@ export default function MotionTest() {
         {/* Right */}
         <Col type="4" gap="32" totalGap="1" css={{padding: "48px 0"}}>
 
-          {/* 1 KIM EMPHASIZED DECELERATE / DURATION EXTRA LONG 2 */}
+          {/* 1 KIM EMPHASIZED DECELERATE / DURATION EXTRA LONG 1 */}
           <div css={{
             width: 428, 
             height: 489,
@@ -188,14 +189,14 @@ export default function MotionTest() {
             borderRadius: 8, 
             backgroundColor: palette.white,
             boxShadow: "0px 0px 40px -8px rgba(0, 0, 0, 0.16),0 0 24px -16px rgba(0, 0, 0, 0.16)",
-            animation: `${animateUp} ${easingEmphasizedDecelerate} ${durationExtraLong2}`,
+            animation: `${animateUp} ${easingEmphasizedDecelerate} ${durationExtraLong1}`,
           }}
           >
 
             {/* Header */}
             <div css={{padding: "16px 32px", borderBottom: `1px solid ${palette.neutral.lightCopy}`, display: "flex", flexFlow: "column", gap: 8}}>
               <Typography label="Expressive decelerate" h2 />
-              <Typography label="1200ms" body1/>
+              <Typography label="800ms" body1/>
             </div>
 
             {/* Summary */}
