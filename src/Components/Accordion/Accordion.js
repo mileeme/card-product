@@ -45,7 +45,7 @@ export default function Accordion(props) {
           </div>
 
           {/* Icon transition */}
-          <div className={`icon ${isOpen ? "icon--open" : ""}`}>
+          <div className={`accordion-icon ${isOpen ? "accordion-icon--open" : ""}`}>
             <Icon type="chevronDown" size="md" button="ghostPrimary" />
           </div>
         </div>
