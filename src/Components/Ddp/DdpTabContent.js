@@ -102,7 +102,7 @@ export default function DdpTabContent() {
       <div css={{display: stickyKim ? "block" : "none", position: "fixed", top: 0, left: 0, right: 0, height: stickyKim ? "auto" : 0, backgroundColor: palette.white, width: "100%"}}>
         <Container css={{display: "grid", gap: 4}} lg>
           {/* Kim */}
-          <div css={{backgroundColor: palette.white, padding: "8px 0 0 0", display: "grid", gap: 24 }}>
+          <div css={{backgroundColor: palette.white, padding: "16px 0 0 0", display: "grid", gap: 24 }}>
 
             {/* Title */}
             <div css={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
