@@ -7,10 +7,11 @@ import HeaderTabs2 from "./Components/Header/HeaderTabs2";
 import Header from "./Components/Header/Header";
 // import LohpIndex from "./Components/Lohp/LohpIndex";
 // import Discover from "./Components/Discover/Discover";
-// import Xdp from "./Components/XDP/Xdp";
+import Xdp from "./Components/XDP/Xdp";
 import Motion from "./Components/Motion/Motion";
 import MotionTest from "./Components/Motion/MotionTest";
 import AccordionTest from "./Components/Accordion/AccordionTest";
+import Ddp from "./Components/Ddp/Ddp";
 // import "./Components/Accordion/test.css";
 
 function App() {
@@ -32,8 +33,9 @@ function App() {
 
         <Routes>
           <Route exact path="/" element={<Motion />} />
-          <Route exact path="/motion-test" element={<MotionTest />} />
+          <Route exact path="/xdp" element={<Xdp />} />
           <Route exact path="/accordion" element={<AccordionTest />} />
+          <Route exact path="/ddp" element={<Ddp />} />
         </Routes>
       </main>
     </BrowserRouter>

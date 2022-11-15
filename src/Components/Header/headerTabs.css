@@ -1,0 +1,16 @@
+.tabs {
+  position: relative;
+  display: flex;
+  height: 40px;
+  color: white;
+  gap: 32px;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}

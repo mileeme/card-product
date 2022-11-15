@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Container from "../Container/Container";
 import { theme } from "../../Styles/theme";
 import Typography from "../Typography";
-import styles from "./HeaderTabs.module.scss";
+import "./headerTabs.css";
 
 // This is the most up to date Header tab (7/28)
 export default function HeaderTabs2() {
@@ -12,10 +12,6 @@ export default function HeaderTabs2() {
 
   // theme
   const {palette, mq} = theme
-
-  // Listen for window size
-  const tabGap = 32;
-
 
   function handleTabClick(e) {
     setSelected(e.currentTarget.innerText);
@@ -32,43 +28,51 @@ export default function HeaderTabs2() {
         }}
         flex
       >
-        <div
-          className={styles.tabs}
-          css={{ gap: tabGap, color: palette.white }}
-        >
-          {/* LOHP */}
-          <div
-            className={styles.tab}
-            onClick={handleTabClick}
-          >
+        <div className="tabs">
+          {/* Link 1 */}
+          <div className="tab" onClick={handleTabClick}>
             {selected === "Motion" ? 
               <Link css={{textDecoration: "none"}} to="/"><Typography label='Motion' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/"><Typography label='Motion' body1 /></Link>    
+              <Link css={{textDecoration: "none"}} to="/"><Typography label='Motion' h3 /></Link>    
             }
+            <div css={{position: "absolute", bottom: 0, left: 0, right: 0, borderBottom: `3px solid ${selected === "Motion" ? palette.white : "transparent"}`}}></div>
           </div>
 
-          {/* Motion test */}
+          {/* Link 2 */}
           <div
-            className={styles.tab}
+            className="tab"
             onClick={handleTabClick}
           >
-            {selected === "MotionTest" ? 
-              <Link css={{textDecoration: "none"}} to="/motion-test"><Typography label='MotionTest' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/motion-test"><Typography label='MotionTest' body1 /></Link>    
+            {selected === "Xdp" ? 
+              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='Xdp' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/xdp"><Typography label='Xdp' h3 /></Link>    
             }
+            <div css={{position: "absolute", bottom: 0, left: 0, right: 0, borderBottom: `3px solid ${selected === "Xdp" ? palette.white : "transparent"}`}}></div>
           </div>
 
-          {/* Accordion test */}
+          {/* Link 3 */}
           <div
-            className={styles.tab}
+            className="tab"
             onClick={handleTabClick}
           >
             {selected === "Accordion" ? 
               <Link css={{textDecoration: "none"}} to="/accordion"><Typography label='Accordion' h3 /></Link> :             
-              <Link css={{textDecoration: "none"}} to="/accordion"><Typography label='Accordion' body1 /></Link>    
+              <Link css={{textDecoration: "none"}} to="/accordion"><Typography label='Accordion' h3 /></Link>    
             }
+            <div css={{position: "absolute", bottom: 0, left: 0, right: 0, borderBottom: `3px solid ${selected === "Accordion" ? palette.white : "transparent"}`}}></div>
           </div>
 
+          {/* Link 4 */}
+          <div
+            className="tab"
+            onClick={handleTabClick}
+          >
+            {selected === "Ddp" ? 
+              <Link css={{textDecoration: "none"}} to="/ddp"><Typography label='Ddp' h3 /></Link> :             
+              <Link css={{textDecoration: "none"}} to="/ddp"><Typography label='Ddp' h3 /></Link>    
+            }
+            <div css={{position: "absolute", bottom: 0, left: 0, right: 0, borderBottom: `3px solid ${selected === "Ddp" ? palette.white : "transparent"}`}}></div>
+          </div>
         </div>
       </Container>
     </nav>

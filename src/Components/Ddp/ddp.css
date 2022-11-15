@@ -1,0 +1,19 @@
+.evenBackground .section:nth-child(even) {
+  background: #F5F7F8;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.divider--horizontal {
+  height: 1px;
+  width: 100%;
+  background-color: #E5E7E8;
+}
+
+.divider--vertical {
+  width: 1px;
+  height: 100%;
+  background-color: #E5E7E8;
+}

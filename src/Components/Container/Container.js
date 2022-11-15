@@ -35,7 +35,7 @@ const ContainerLG = styled.div({
   maxWidth: breakpoints.lg,
   padding: "0 16px",
   margin: "0 auto",
-  [mq[3]]: {
+  [mq[2]]: {
     width: breakpoints.lg,
     padding: "0 48px",
   },
@@ -43,9 +43,9 @@ const ContainerLG = styled.div({
 
 const ContainerFlex = styled.div({
   boxSizing: "border-box",
-  padding: "0 16px",
+  padding: "0 48px",
   margin: "0 auto",
-  [mq[3]]: {
+  [mq[2]]: {
     padding: "0 48px",
   },
 });

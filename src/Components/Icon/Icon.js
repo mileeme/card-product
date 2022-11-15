@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { theme } from "../../Styles/theme";
 import styled from "@emotion/styled/macro";
 
@@ -347,7 +349,7 @@ export default function Icon(props) {
   )
 
   const check = (
-    <svg aria-labelledby="cds-react-aria-781-title" fill="none" focusable="false" height={handleSizeChange(size)} role="img" viewBox="0 0 16 16" width={handleSizeChange(size)} id="cds-react-aria-781"><title id="cds-react-aria-781-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M15.74 3.672L6.225 14.168.323 8.736l1.354-1.472 4.419 4.068 8.163-9.004 1.482 1.344z" fill={handleColorChange(button)}></path></svg>
+    <svg css={{width: handleSizeChange(size), height: handleSizeChange(size)}} aria-labelledby="cds-react-aria-781-title" fill="none" focusable="false" role="img" viewBox="0 0 20 16" id="cds-react-aria-781"><title id="cds-react-aria-781-title">Small</title><path fillRule="evenodd" clipRule="evenodd" d="M15.74 3.672L6.225 14.168.323 8.736l1.354-1.472 4.419 4.068 8.163-9.004 1.482 1.344z" fill={handleColorChange(button)}></path></svg>
   )
 
   const comment = (

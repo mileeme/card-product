@@ -13,22 +13,26 @@ export default function Button(props) {
     display: flex;
     gap: 12px;
     align-items: center;
-    height: ${size === "md" ? "40px" : "36px"};
+    height: ${
+      (size === "md" && "48px") || 
+      (size === "lohp" && "40px") || 
+      (size === "sm" && "36px")};
     justify-content: center;
-    padding: ${(label && size === "md" && `0 ${spacing[400]}`) ||
-    (label && size === "sm" && `0 ${spacing[200]}`)};
+    padding: ${
+      (label && size === "md" && `0 ${spacing[400]}`) || (label && size === "lohp" && `0 ${spacing[200]}`) ||
+      (label && size === "sm" && `0 ${spacing[200]}`)};
     // width: auto;
-    margin-left: ${(margin === "negativeLeft" &&
-      size == "md" &&
-      `-${spacing[400]}`) ||
-    (margin === "negativeLeft" && size === "sm" && `-${spacing[200]}`) ||
+    margin-left: ${
+      (margin === "negativeLeft" && size == "md" && `-${spacing[400]}`) ||
+      (margin === "negativeLeft" && size === "lohp" && `-${spacing[200]}`) ||
+      (margin === "negativeLeft" && size === "sm" && `-${spacing[200]}`) ||
     "0"};
-    margin-right: ${(margin === "negativeRight" &&
-      size == "md" &&
-      `-${spacing[400]}`) ||
-    (margin === "negativeRight" && size === "sm" && `-${spacing[200]}`) ||
+    margin-right: ${
+      (margin === "negativeRight" && size == "md" && `-${spacing[400]}`) ||
+      (margin === "negativeRight" && size === "lohp" && `-${spacing[200]}`) ||
+      (margin === "negativeRight" && size === "sm" && `-${spacing[200]}`) ||
     "0"};
-    border-radius: ${borderRadius[50]};
+    border-radius: ${borderRadius[100]};
     border: none;
     box-shadow: 
     ${(variant === "primary" && "none") ||
