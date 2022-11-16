@@ -11,6 +11,7 @@ import Icon from "../Icon/Icon"
 import Button from "../Button/Button"
 import DdpTabs from "./DdpTabs";
 import "./ddp.css";
+import { uOfIllinois, illinois } from "../Icon/PartnerLogo"
 
 export default function DdpTabContent() {
   const [scrollPos, setScrollPos] = useState();
@@ -102,14 +103,17 @@ export default function DdpTabContent() {
       <div css={{display: stickyKim ? "block" : "none", position: "fixed", top: 0, left: 0, right: 0, height: stickyKim ? "auto" : 0, backgroundColor: palette.white, width: "100%"}}>
         <Container css={{display: "grid", gap: 4}} lg>
           {/* Kim */}
-          <div css={{backgroundColor: palette.white, padding: "16px 0 0 0", display: "grid", gap: 24 }}>
+          <div css={{backgroundColor: palette.white, padding: "16px 0 0 0", display: "grid", gap: 16 }}>
 
             {/* Title */}
             <div css={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
-              <Typography label="Master of Data Science" d2Semibold />
+              <div css={{display: "flex", gap: 16, alignItems: "center"}}>
+                <img src={uOfIllinois} height="24px" />
+                <Typography label="Master of Data Science" h3 />
+              </div>
               <div css={{display: "flex", gap: 16}}>
-                <Button variant="primary" size="md" label="Apply now" />
-                <Button variant="secondary" size="md" label="Request info" />
+                <Button variant="primary" size="sm" label="Apply now" />
+                <Button variant="secondary" size="sm" label="Request info" />
               </div>
             </div>
             <div className="divider--horizontal"></div>
